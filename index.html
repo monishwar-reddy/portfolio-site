@@ -1,176 +1,250 @@
-<!-- index.html -->
+<!-- Full updated HTML with enhanced internships section and publication section -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Monishwar Reddy | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monishwar Reddy | AI Research Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
       font-family: 'Segoe UI', sans-serif;
     }
 
     body {
-      background: #f4f6f8;
+      background-color: #f9f9f9;
       color: #333;
-      line-height: 1.6;
-      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #0d1f3f;
+      color: #fff;
+      padding: 20px 60px;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    .container {
-      max-width: 800px;
-      width: 100%;
-      background: #fff;
-      padding: 40px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-      border-radius: 12px;
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00d8ff;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0078d7, #004e8c);
+      color: white;
       text-align: center;
+      padding: 100px 20px;
     }
 
-    .profile-pic {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
+    .hero img {
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      border: 4px solid #2b6cb0;
+      border: 6px solid white;
       margin-bottom: 20px;
     }
 
-    h1 {
-      font-size: 2.2rem;
-      color: #2b6cb0;
-      margin-bottom: 10px;
+    .hero h1 {
+      font-size: 3rem;
     }
 
-    p.subtitle {
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 30px;
+    .hero p {
+      font-size: 1.3rem;
+      margin: 10px 0 30px;
     }
 
     .resume-btn {
-      background: #2b6cb0;
-      color: white;
-      padding: 12px 24px;
+      padding: 12px 30px;
+      background: white;
+      color: #0078d7;
+      border-radius: 25px;
+      font-weight: bold;
       text-decoration: none;
-      border-radius: 8px;
-      display: inline-block;
-      margin-bottom: 30px;
-      transition: background 0.3s;
+      transition: 0.3s;
     }
 
     .resume-btn:hover {
-      background: #1a4c86;
+      background-color: #e0e0e0;
     }
 
     section {
-      text-align: left;
-      margin-bottom: 40px;
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
     }
 
     section h2 {
-      color: #2b6cb0;
-      margin-bottom: 12px;
-      font-size: 1.4rem;
-      border-bottom: 2px solid #e0e0e0;
-      padding-bottom: 6px;
-    }
-
-    section ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    section ul li {
-      margin-bottom: 12px;
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 0.9rem;
-      color: #888;
+      font-size: 2.2rem;
+      color: #004e8c;
+      margin-bottom: 30px;
       text-align: center;
     }
 
-    a {
-      color: #2b6cb0;
-      text-decoration: none;
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
     }
 
-    @media (max-width: 600px) {
-      .container {
-        padding: 20px;
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card strong {
+      color: #0078d7;
+    }
+
+    footer {
+      background: #0d1f3f;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
       }
-
-      .profile-pic {
-        width: 120px;
-        height: 120px;
+      .hero h1 {
+        font-size: 2.2rem;
       }
     }
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <img src="monish.jpeg" alt="Monishwar Reddy" class="profile-pic" />
+  <header>
     <h1>Monishwar Reddy</h1>
-    <p class="subtitle">AI Enthusiast | B.Tech CSE | Researcher | Innovator</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#internships">Internships</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <img src="monish.jpg" alt="Monishwar Reddy">
+    <h1>AI & BCI Enthusiast</h1>
+    <p>Student | Researcher | Mathematical Modeler</p>
     <a class="resume-btn" href="Monishwar_Resume.pdf" download>📄 Download My Resume</a>
+  </section>
 
-    <section>
-      <h2>About Me</h2>
-      <p>
-        I'm a passionate B.Tech CSE student from Woxsen University, with deep interests in Artificial Intelligence, Mathematical Modeling, Brain-Computer Interfaces (BCI), and sustainable tech solutions.
-      </p>
-    </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      I'm a B.Tech CSE student at Woxsen University passionate about AI, Mathematical Modeling, and Brain-Computer Interfaces. I aim to build impactful solutions that integrate science and society.
+    </div>
+  </section>
 
-    <section>
-      <h2>Research Projects</h2>
-      <ul>
-        <li><strong>SEIR Epidemic Modeling:</strong> Performed eigenvalue and bifurcation analysis with population dynamics.</li>
-        <li><strong>Monte Carlo Uncertainty Analysis:</strong> Applied to mental health prevalence datasets using polynomial regression.</li>
-        <li><strong>EEG & Neuromarketing:</strong> Explored consumer behavior using brain signals and AI classifiers.</li>
-      </ul>
-    </section>
+  <section id="projects">
+    <h2>Research Projects</h2>
+    <div class="card-grid">
+      <div class="card">
+        <strong>SEIR Epidemic Modeling</strong><br/>
+        Bifurcation & simulation-based analysis of epidemic dynamics.
+      </div>
+      <div class="card">
+        <strong>BCI + EEG Research</strong><br/>
+        EEG signal analysis in neuromarketing and user behavior.
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Internships</h2>
-      <ul>
-        <li><strong>Research Intern @ HMI Lab, Woxsen:</strong> Focused on EEG models, SEIR simulations, and real-time data analysis.</li>
-        <li><strong>Author @ Symmetric 2024 & IGI Global:</strong> Published works on neuromarketing and stochastic models.</li>
-      </ul>
-    </section>
+  <section id="internships">
+    <h2>Internships</h2>
+    <div class="card-grid">
+      <div class="card">
+        <strong>Woxsen University – Research Assistant</strong><br/>
+        <a href="download-1.jpeg">📷 View Photo</a><br/>
+        Working on SEIR epidemic models, Monte Carlo methods, and cluster research.
+      </div>
+      <div class="card">
+        <strong>Woxsen University – Research Intern</strong><br/>
+        <a href="download-2.jpeg">📷 View Photo</a><br/>
+        Researched EEG technologies and HMI; published findings in a scientific paper .
+      </div>
+      <div class="card">
+        <strong>HCL Tech – Biomedical Signal Processing Intern</strong><br/>
+        <a href="download-3.jpeg">📷 View Photo</a><br/>
+        Developed models for myocardial infarction detection.
+      </div>
+      <div class="card">
+        <strong>Tedis Foundation – Founder</strong><br/>
+        <a href="download-4.jpeg">📷 View Photo</a><br/>
+        Empowering youth in tech and diplomacy across India, UAE, and Mongolia through MUN.
+      </div>
+      <div class="card">
+        <strong>Tiaano – R&D Analyst Intern</strong><br/>
+        <a href="download-5.jpeg">📷 View Photo</a><br/>
+        Delivered strategic research insights in engineering solutions.
+      </div>
+      <div class="card">
+        <strong>Woxsen University – Data Analyst Intern</strong><br/>
+        <a href="download-6.jpeg">📷 View Photo</a><br/>
+        Promoted university initiatives via social media analytics .
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Education</h2>
-      <ul>
-        <li>Bachelor of Technology in Computer Science Engineering</li>
-        <li>Woxsen University, India</li>
-      </ul>
-    </section>
+  <section id="publications">
+    <h2>Publications</h2>
+    <div class="card-grid">
+      <div class="card">
+        <strong>Various Methods For Plastic Waste Pyrolysis To Fuels: A Review</strong><br/>
+        <a href="https://journals.stmjournals.com/jopc/article=2025/view=215242/">📄 View Paper</a><br/>
+        Venkatanarayana Pappula, Karre Saisuvan Reddy, Abhishek Reddy, Monishwar Reddy Vardireddy.<br/>
+        <em>Various Methods for Plastic Waste Pyrolysis To Fuels: A Review</em>.<br/>
+        <strong>Journal of Polymer and Composites</strong>, 2025; 13(04):79-93.
+      </div>
+      <div class="card">
+        <strong>Integrating EEG Analysis to Illuminate Consumer Behavior and Optimize Marketing Strategies</strong><br/>
+        <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521?" target="_blank">📘 View Chapter</a><br/>
+        MR Vardireddy, P Gajbhiye. (2025).<br/>
+        <em>Integrating EEG Analysis to Illuminate Consumer Behavior and Optimize Marketing Strategies</em>.<br/>
+        <strong>The Quantum AI Era of Neuromarketing</strong>, IGI Global.
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Contact</h2>
-      <ul>
-        <li>Email: <a href="mailto:monishwar@example.com">monishwar@example.com</a></li>
-        <li>GitHub: <a href="https://github.com/monishwar-reddy" target="_blank">github.com/monishwar-reddy</a></li>
-        <!-- You can add LinkedIn, Twitter, or website here too -->
-      </ul>
-    </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:monishwar@example.com">monishwar@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/monishwar-reddy" target="_blank">github.com/monishwar-reddy</a></p>
+    </div>
+  </section>
 
-    <footer>
-      © 2025 Monishwar Reddy | All rights reserved.
-    </footer>
-  </div>
-
+  <footer>
+    &copy; 2025 Monishwar Reddy | All rights reserved.
+  </footer>
 </body>
 </html>

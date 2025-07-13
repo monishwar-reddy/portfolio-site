@@ -11,25 +11,25 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
       font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
       background: linear-gradient(to right, #000428, #004e92);
       color: #f0f0f0;
-      overflow-x: hidden;
     }
 
     header {
-      background-color: #0b0c10;
-      color: #fff;
-      padding: 20px 60px;
+      background: #0b0c10;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: nowrap;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
 
     header h1 {
@@ -37,16 +37,12 @@
       color: #00c6ff;
     }
 
-    nav {
-      display: flex;
-      gap: 25px;
-    }
-
     nav a {
       color: #fff;
+      margin: 0 15px;
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
 
     nav a:hover {
@@ -54,88 +50,77 @@
     }
 
     .hero {
-      background: url('monishwar.jpg') no-repeat center center/cover;
-      position: relative;
+      background: url('monishwar.jpg') center center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
       min-height: 100vh;
+      text-align: center;
+      position: relative;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
     }
 
     .hero-content {
       position: relative;
-      z-index: 2;
-      color: white;
-      text-align: center;
-      padding: 20px;
+      color: #fff;
+      z-index: 1;
     }
 
     .hero-content h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      margin-bottom: 15px;
+      font-size: 3rem;
+      margin-bottom: 10px;
     }
 
     .hero-content p {
-      font-size: 1.4rem;
-      color: #ccc;
-      margin: 8px 0;
+      font-size: 1.2rem;
+      margin: 5px 0;
     }
 
     .resume-button {
       background: #00ffd9;
       color: #000;
-      padding: 14px 32px;
-      font-weight: bold;
+      padding: 12px 28px;
       border-radius: 30px;
       text-decoration: none;
-      transition: background 0.3s ease;
-      display: inline-block;
+      font-weight: bold;
       margin-top: 20px;
+      display: inline-block;
     }
 
     .resume-button:hover {
-      background: #004e92;
-      color: white;
+      background: #0ff;
     }
 
     section {
-      padding: 80px 20px;
-      max-width: 1200px;
+      padding: 60px 20px;
+      max-width: 1100px;
       margin: auto;
     }
 
     section h2 {
-      font-size: 2.5rem;
       text-align: center;
-      margin-bottom: 40px;
+      font-size: 2.5rem;
       color: #00ffd9;
-      text-transform: uppercase;
+      margin-bottom: 40px;
     }
 
-    .card {
+    .card, .card-grid .card {
       background: rgba(255, 255, 255, 0.05);
-      padding: 25px;
+      padding: 20px;
       border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, background 0.3s ease;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+      transition: transform 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      background: rgba(0, 255, 217, 0.05);
+      transform: translateY(-5px);
     }
 
     .card-grid {
@@ -151,9 +136,10 @@
     }
 
     .card strong {
-      color: #00ffd9;
       display: block;
       margin-bottom: 8px;
+      font-weight: 600;
+      color: #00ffd9;
     }
 
     .card a {
@@ -165,8 +151,32 @@
       text-decoration: underline;
     }
 
+    .newsletter-button {
+      background-color: #00ffd9;
+      color: #000;
+      padding: 12px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      font-weight: 600;
+    }
+
     footer {
-      display: none;
+      background: #0b0c10;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    section:not(.visible) {
+      opacity: 0;
+      transform: translateY(40px);
     }
 
     @media (max-width: 768px) {
@@ -176,8 +186,10 @@
       }
 
       nav {
-        margin-top: 10px;
+        display: flex;
         flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
       }
 
       .hero-content h1 {
@@ -185,10 +197,25 @@
       }
 
       .hero-content p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('section').forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        const threshold = window.innerHeight * 0.85;
+        if (top < threshold) {
+          section.classList.add('visible');
+        }
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -215,11 +242,9 @@
   <section id="about">
     <h2>About Me</h2>
     <div class="card">
-      Hi, I’m Monishwar Reddy Vardireddy, a Computer Science student with a strong interest in technology, research, and solving real-world problems. I’m currently studying at Woxsen University in Hyderabad, and I love working on things that can make life better and smarter.<br><br>
-
-      I’ve worked on projects like using AI to detect heart problems from ECG signals, studying disease spread using math models, and analyzing brain response to ads. I’ve published research papers and interned at places like HCL Tech and Tiaano. With skills in Python, C, R, Jupyter, Power BI, and more, I enjoy using data to create meaningful solutions.<br><br>
-
-      I believe that technology and knowledge can help build a better future—and I’m excited to contribute.
+      Hi, I’m Monishwar Reddy Vardireddy, a Computer Science student passionate about technology, research, and real-world innovation. I study at Woxsen University, Hyderabad, and love crafting solutions that matter.<br><br>
+      My projects span ECG-based AI diagnostics, disease modeling, and neuromarketing using EEG. With publications and internships at HCL Tech, Tiaano, and my university, I apply Python, R, and Power BI to real data challenges.<br><br>
+      I believe tech + purpose = better future. Let’s build that.
     </div>
   </section>
 
@@ -228,33 +253,33 @@
     <div class="card-grid">
       <div class="card">
         <img src="download-1.jpg" alt="RA">
-        <strong>Research Assistant – Woxsen University</strong>
-        Working on SEIR epidemic models and Monte Carlo simulations.
+        <strong>Research Assistant – Woxsen University</strong><br>
+        SEIR epidemic modeling and simulations.
       </div>
       <div class="card">
         <img src="download-2.jpg" alt="Intern">
-        <strong>Research Intern – Woxsen University</strong>
-        Exploring EEG and HMI models; contributed to scientific papers.
+        <strong>Research Intern – Woxsen University</strong><br>
+        EEG/HMI research and publications.
       </div>
       <div class="card">
         <img src="download-3.jpg" alt="HCL">
-        <strong>Biomedical Signal Processing Intern – HCL Tech</strong>
-        Detection models for myocardial infarction.
+        <strong>Biomedical Intern – HCL Tech</strong><br>
+        AI for myocardial infarction detection.
       </div>
       <div class="card">
         <img src="download-4.jpg" alt="TEDIS">
-        <strong>Founder – TEDIS Foundation</strong>
-        Tech & diplomacy platform with partnerships across India, UAE & Mongolia.
+        <strong>Founder – TEDIS Foundation</strong><br>
+        Diplomacy & tech platform India/UAE/Mongolia.
       </div>
       <div class="card">
         <img src="download-5.jpg" alt="Tiaano">
-        <strong>R&D Analyst Intern – Tiaano</strong>
-        Delivered insights on innovation and engineering solutions.
+        <strong>R&D Intern – Tiaano</strong><br>
+        Innovation & engineering analysis.
       </div>
       <div class="card">
         <img src="download-6.jpg" alt="DA">
-        <strong>Data Analyst Intern – Woxsen University</strong>
-        Helped drive social media analytics for university growth.
+        <strong>Data Analyst – Woxsen University</strong><br>
+        Social media analytics & visualization.
       </div>
     </div>
   </section>
@@ -263,7 +288,7 @@
     <h2>Newsletter</h2>
     <div class="card">
       <p>Stay updated with my latest work and thoughts!</p>
-      <a href="https://www.linkedin.com/newsletters/7280177177575223296/" target="_blank" class="resume-button">🔗 Follow my LinkedIn Newsletter</a>
+      <a href="https://www.linkedin.com/newsletters/7280177177575223296/" target="_blank" class="newsletter-button">🔗 Follow My LinkedIn Newsletter</a>
     </div>
   </section>
 
@@ -271,14 +296,14 @@
     <h2>Publications</h2>
     <div class="card-grid">
       <div class="card">
-        <strong>Plastic Waste Pyrolysis Review</strong>
+        <strong>Plastic Waste Pyrolysis Review</strong><br>
         <a href="https://journals.stmjournals.com/jopc/article=2025/view=215242/" target="_blank">📄 View Paper</a><br>
         Journal of Polymer and Composites, 2025.
       </div>
       <div class="card">
-        <strong>EEG in Neuromarketing</strong>
-        <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521?" target="_blank">📘 View Chapter</a><br>
-        IGI Global – Quantum AI Era of Neuromarketing.
+        <strong>EEG in Neuromarketing</strong><br>
+        <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521" target="_blank">📘 View Chapter</a><br>
+        IGI Global – Quantum AI Neuromarketing.
       </div>
     </div>
   </section>
@@ -287,15 +312,15 @@
     <h2>Conferences</h2>
     <div class="card-grid">
       <div class="card">
-        <img src="symmetry2024.png" alt="Conference Image">
-        <strong>Symmetry2024 Conference</strong>
-        Participated and presented work on Review of solution procedures of certain ecological models.<br>
+        <img src="symmetry2024.png" alt="Symmetry Conference">
+        <strong>Symmetry2024 Conference</strong><br>
+        Presented ecological model analysis.<br>
         <a href="Symmetry 2024 certificate.pdf" target="_blank">📄 View Certificate</a>
       </div>
       <div class="card">
-        <img src="logo.png" alt="Conference Image">
-        <strong>CHEMFLUX 11.0</strong>
-        Presented research work at CHEMFLUX 11.0 conducted by SRM University.<br>
+        <img src="logo.png" alt="Chemflux Conference">
+        <strong>CHEMFLUX 11.0</strong><br>
+        Presented at SRM University.<br>
         <a href="conference-2.png" target="_blank">📄 View Certificate</a>
       </div>
     </div>

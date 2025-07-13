@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Monishwar Reddy | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -17,23 +16,9 @@
     }
 
     body {
-      background: #f9f9fc;
-      color: #222;
+      background: linear-gradient(to right, #1c1f2b, #141e30, #243b55);
+      color: #f0f0f0;
       overflow-x: hidden;
-    }
-
-    header {
-      background-color: #202a44;
-      color: #fff;
-      padding: 20px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    header h1 {
-      font-size: 1.8rem;
     }
 
     nav a {
@@ -41,61 +26,58 @@
       margin-left: 20px;
       text-decoration: none;
       font-weight: 500;
-      transition: 0.3s;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #ffe600;
+      color: #00ffd9;
     }
 
     .hero {
-      background: linear-gradient(135deg, #202a44, #2c3e6c);
+      background: linear-gradient(to right, #000428, #004e92);
       color: white;
-      padding: 100px 20px;
+      padding: 120px 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-direction: column;
+      text-align: center;
+      min-height: 100vh;
     }
 
     .hero img {
-      width: 220px;
-      height: 220px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
-      border: 5px solid #fff;
-      margin: 20px;
-    }
-
-    .hero-content {
-      max-width: 600px;
+      border: 5px solid #00ffd9;
+      margin-bottom: 25px;
     }
 
     .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
+      font-size: 3.2rem;
+      font-weight: bold;
     }
 
     .hero p {
-      font-size: 1.1rem;
-      margin: 15px 0;
-      color: #dcdcdc;
+      font-size: 1.2rem;
+      color: #ccc;
+      margin: 10px 0;
     }
 
-    .resume-btn {
-      padding: 12px 28px;
-      background: #ffe600;
-      color: #202a44;
-      border-radius: 30px;
+    .resume-button {
+      background: #00ffd9;
+      color: #0b0c10;
+      padding: 14px 32px;
       font-weight: bold;
+      border-radius: 30px;
       text-decoration: none;
+      transition: background 0.3s ease;
       display: inline-block;
       margin-top: 20px;
-      transition: background 0.3s;
     }
 
-    .resume-btn:hover {
-      background: #fff58a;
+    .resume-button:hover {
+      background: #d4fff9;
     }
 
     section {
@@ -105,10 +87,10 @@
     }
 
     section h2 {
-      font-size: 2.3rem;
-      color: #2c3e6c;
-      margin-bottom: 40px;
+      font-size: 2.5rem;
       text-align: center;
+      margin-bottom: 40px;
+      color: #00ffd9;
       text-transform: uppercase;
     }
 
@@ -119,37 +101,37 @@
     }
 
     .card {
-      background: white;
+      background: rgba(255, 255, 255, 0.05);
       padding: 25px;
       border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease, background 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      background: #f4f7ff;
+      transform: translateY(-10px);
+      background: rgba(0, 255, 217, 0.05);
     }
 
     .card strong {
-      color: #202a44;
+      color: #00ffd9;
+    }
+
+    .card a {
+      color: #00ffd9;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
     }
 
     footer {
-      background: #202a44;
+      background: #0b0c10;
       color: white;
       padding: 30px 20px;
       text-align: center;
       font-size: 0.9rem;
-    }
-
-    a {
-      color: #0056b3;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
@@ -158,11 +140,7 @@
         align-items: flex-start;
       }
       .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero img {
-        margin-bottom: 20px;
+        padding: 80px 20px;
       }
     }
   </style>
@@ -271,8 +249,6 @@
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 Monishwar Reddy | All rights reserved.
-  </footer>
+
 </body>
 </html>

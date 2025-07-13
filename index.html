@@ -16,13 +16,14 @@
     }
 
     body {
-      background-color: #f9f9f9;
+      background: linear-gradient(to right, #f9f9f9, #f0f4ff);
       color: #333;
       overflow-x: hidden;
+      width: 100%;
     }
 
     header {
-      background-color: #0d1f3f;
+      background-color: #001f3f;
       color: #fff;
       padding: 20px 60px;
       display: flex;
@@ -48,18 +49,26 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, #0078d7, #004e8c);
+      background: linear-gradient(135deg, #004e8c, #00aaff);
       color: white;
-      text-align: center;
       padding: 100px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
     }
 
     .hero img {
-      width: 180px;
-      height: 180px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       border: 6px solid white;
-      margin-bottom: 20px;
+      margin: 20px;
+    }
+
+    .hero-content {
+      max-width: 600px;
     }
 
     .hero h1 {
@@ -87,33 +96,35 @@
 
     section {
       padding: 80px 20px;
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
     }
 
     section h2 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       color: #004e8c;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       text-align: center;
+      text-transform: uppercase;
     }
 
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 30px;
     }
 
     .card {
-      background-color: white;
-      padding: 20px;
-      border-radius: 15px;
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-10px);
+      background: #f1f6ff;
     }
 
     .card strong {
@@ -121,7 +132,7 @@
     }
 
     footer {
-      background: #0d1f3f;
+      background: #001f3f;
       color: white;
       padding: 30px 20px;
       text-align: center;
@@ -133,8 +144,12 @@
         flex-direction: column;
         align-items: flex-start;
       }
-      .hero h1 {
-        font-size: 2.2rem;
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero img {
+        margin: 0 0 20px;
       }
     }
   </style>
@@ -153,9 +168,11 @@
 
   <section class="hero">
     <img src="monish.jpg" alt="Monishwar Reddy">
-    <h1>AI & BCI Enthusiast</h1>
-    <p>Student | Researcher | Mathematical Modeler</p>
-    <a class="resume-btn" href="Monishwar_Resume.pdf" download>📄 Download My Resume</a>
+    <div class="hero-content">
+      <h1>AI & BCI Enthusiast</h1>
+      <p>Student | Researcher | Mathematical Modeler</p>
+      <a class="resume-btn" href="Monishwar_Resume.pdf" download>📄 Download My Resume</a>
+    </div>
   </section>
 
   <section id="about">
@@ -234,7 +251,6 @@
       </div>
     </div>
   </section>
-
   <section id="contact">
     <h2>Contact</h2>
     <div class="card">

@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monishwar Reddy | AI Research Portfolio</title>
+  <title>Monishwar Reddy | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
-      background: linear-gradient(to right, #f9f9f9, #f0f4ff);
-      color: #333;
+      background: #f9f9fc;
+      color: #222;
       overflow-x: hidden;
-      width: 100%;
     }
 
     header {
-      background-color: #001f3f;
+      background-color: #202a44;
       color: #fff;
       padding: 20px 60px;
       display: flex;
@@ -44,11 +44,11 @@
     }
 
     nav a:hover {
-      color: #00d8ff;
+      color: #ffe600;
     }
 
     .hero {
-      background: linear-gradient(135deg, #004e8c, #00aaff);
+      background: linear-gradient(135deg, #202a44, #2c3e6c);
       color: white;
       padding: 100px 20px;
       display: flex;
@@ -62,7 +62,7 @@
       width: 220px;
       height: 220px;
       border-radius: 50%;
-      border: 6px solid white;
+      border: 5px solid #fff;
       margin: 20px;
     }
 
@@ -72,25 +72,29 @@
 
     .hero h1 {
       font-size: 3rem;
+      font-weight: 700;
     }
 
     .hero p {
-      font-size: 1.3rem;
-      margin: 10px 0 30px;
+      font-size: 1.1rem;
+      margin: 15px 0;
+      color: #dcdcdc;
     }
 
     .resume-btn {
-      padding: 12px 30px;
-      background: white;
-      color: #0078d7;
-      border-radius: 25px;
+      padding: 12px 28px;
+      background: #ffe600;
+      color: #202a44;
+      border-radius: 30px;
       font-weight: bold;
       text-decoration: none;
-      transition: 0.3s;
+      display: inline-block;
+      margin-top: 20px;
+      transition: background 0.3s;
     }
 
     .resume-btn:hover {
-      background-color: #e0e0e0;
+      background: #fff58a;
     }
 
     section {
@@ -100,8 +104,8 @@
     }
 
     section h2 {
-      font-size: 2.5rem;
-      color: #004e8c;
+      font-size: 2.3rem;
+      color: #2c3e6c;
       margin-bottom: 40px;
       text-align: center;
       text-transform: uppercase;
@@ -116,34 +120,35 @@
     .card {
       background: white;
       padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s ease, background 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      background: #f1f6ff;
+      transform: translateY(-8px);
+      background: #f4f7ff;
     }
 
     .card strong {
-      color: #0078d7;
-    }
-
-    .card a img {
-      margin-top: 10px;
-      width: 100%;
-      max-height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
+      color: #202a44;
     }
 
     footer {
-      background: #001f3f;
+      background: #202a44;
       color: white;
       padding: 30px 20px;
       text-align: center;
       font-size: 0.9rem;
+    }
+
+    a {
+      color: #0056b3;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
@@ -156,7 +161,7 @@
         text-align: center;
       }
       .hero img {
-        margin: 0 0 20px;
+        margin-bottom: 20px;
       }
     }
   </style>
@@ -176,8 +181,8 @@
   <section class="hero">
     <img src="monish.jpg" alt="Monishwar Reddy">
     <div class="hero-content">
-      <h1>AI & BCI Enthusiast</h1>
-      <p>Student | Researcher | Mathematical Modeler</p>
+      <h1>Monishwar Reddy</h1>
+      <p>Student, Woxsen University<br>Biomedical Signal Processing Intern, HCL Tech</p>
       <a class="resume-btn" href="Monishwar_Resume.pdf" download>📄 Download My Resume</a>
     </div>
   </section>
@@ -202,59 +207,55 @@
       </div>
     </div>
   </section>
-
+  
   <section id="internships">
-    <h2>Internships</h2>
-    <div class="card-grid">
-      <div class="card">
-        <strong>Woxsen University – Research Assistant</strong><br/>
-        <a href="download-1.jpeg"><img src="download-1.jpeg" alt="Woxsen RA Photo"></a><br/>
-        Working on SEIR epidemic models, Monte Carlo methods, and cluster research.
-      </div>
-      <div class="card">
-        <strong>Woxsen University – Research Intern</strong><br/>
-        <a href="download-2.jpeg"><img src="download-2.jpeg" alt="Woxsen EEG Photo"></a><br/>
-        Researched EEG technologies and HMI; published findings in a scientific paper.
-      </div>
-      <div class="card">
-        <strong>HCL Tech – Biomedical Signal Processing Intern</strong><br/>
-        <a href="download-3.jpeg"><img src="download-3.jpeg" alt="HCL Intern Photo"></a><br/>
-        Developed models for myocardial infarction detection.
-      </div>
-      <div class="card">
-        <strong>Tedis Foundation – Founder</strong><br/>
-        <a href="download-4.jpeg"><img src="download-4.jpeg" alt="Tedis Photo"></a><br/>
-        Empowering youth in tech and diplomacy across India, UAE, and Mongolia through MUN.
-      </div>
-      <div class="card">
-        <strong>Tiaano – R&D Analyst Intern</strong><br/>
-        <a href="download-5.jpeg"><img src="download-5.jpeg" alt="Tiaano Photo"></a><br/>
-        Delivered strategic research insights in engineering solutions.
-      </div>
-      <div class="card">
-        <strong>Woxsen University – Data Analyst Intern</strong><br/>
-        <a href="download-6.jpeg"><img src="download-6.jpeg" alt="Woxsen Data Analyst Photo"></a><br/>
-        Promoted university initiatives via social media analytics.
-      </div>
+  <h2>Internships</h2>
+  <div class="card-grid">
+    <div class="card">
+      <img src="download-1.jpeg" alt="RA" style="width:100%; border-radius:10px; margin-bottom:10px;" />
+      <strong>Research Assistant – Woxsen University</strong><br/>
+      Working on SEIR epidemic models and Monte Carlo simulations.
     </div>
-  </section>
+    <div class="card">
+      <img src="download-2.jpeg" alt="Intern" style="width:100%; border-radius:10px; margin-bottom:10px;" />
+      <strong>Research Intern – Woxsen University</strong><br/>
+      Exploring EEG and HMI models; contributed to scientific papers.
+    </div>
+    <div class="card">
+      <img src="download-3.jpeg" alt="HCL" style="width:100%; border-radius:10px; margin-bottom:10px;" />
+      <strong>Biomedical Signal Processing Intern – HCL Tech</strong><br/>
+      Detection models for myocardial infarction.
+    </div>
+    <div class="card">
+      <img src="download-4.jpeg" alt="TEDIS" style="width:100%; border-radius:10px; margin-bottom:10px;" />
+      <strong>Founder – TEDIS Foundation</strong><br/>
+      Tech & diplomacy platform with partnerships across India, UAE & Mongolia.
+    </div>
+    <div class="card">
+      <img src="download-5.jpeg" alt="Tiaano" style="width:100%; border-radius:10px; margin-bottom:10px;" />
+      <strong>R&D Analyst Intern – Tiaano</strong><br/>
+      Delivered insights on innovation and engineering solutions.
+    </div>
+    <div class="card">
+      <img src="download-6.jpeg" alt="DA" style="width:100%; border-radius:10px; margin-bottom:10px;" />
+      <strong>Data Analyst Intern – Woxsen University</strong><br/>
+      Helped drive social media analytics for university growth.
+    </div>
+  </div>
+</section>
 
   <section id="publications">
     <h2>Publications</h2>
     <div class="card-grid">
       <div class="card">
-        <strong>Various Methods For Plastic Waste Pyrolysis To Fuels: A Review</strong><br/>
+        <strong>Plastic Waste Pyrolysis Review</strong><br/>
         <a href="https://journals.stmjournals.com/jopc/article=2025/view=215242/" target="_blank">📄 View Paper</a><br/>
-        Venkatanarayana Pappula, Karre Saisuvan Reddy, Abhishek Reddy, Monishwar Reddy Vardireddy.<br/>
-        <em>Various Methods for Plastic Waste Pyrolysis To Fuels: A Review</em>.<br/>
-        <strong>Journal of Polymer and Composites</strong>, 2025; 13(04):79-93.
+        Journal of Polymer and Composites, 2025.
       </div>
       <div class="card">
-        <strong>Integrating EEG Analysis to Illuminate Consumer Behavior and Optimize Marketing Strategies</strong><br/>
+        <strong>EEG in Neuromarketing</strong><br/>
         <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521?" target="_blank">📘 View Chapter</a><br/>
-        MR Vardireddy, P Gajbhiye. (2025).<br/>
-        <em>Integrating EEG Analysis to Illuminate Consumer Behavior and Optimize Marketing Strategies</em>.<br/>
-        <strong>The Quantum AI Era of Neuromarketing</strong>, IGI Global.
+        IGI Global – Quantum AI Era of Neuromarketing.
       </div>
     </div>
   </section>

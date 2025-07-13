@@ -105,27 +105,35 @@
 
     .hero {
       background: linear-gradient(to right, #000428, #004e92);
+      position: relative;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      text-align: left;
+      justify-content: center;
+      text-align: center;
       min-height: 100vh;
-      padding: 60px 80px;
-      gap: 40px;
-      flex-wrap: wrap;
+      overflow: hidden;
     }
 
     .hero::before {
+      content: "";
+      background: url('monishwar.jpg') no-repeat center center/cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+    .hero::after {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6); /* dark overlay for readability */
-      z-index: 1;
-    }
-
+      background: rgba(0, 0, 0, 0.5); /* slightly dark overlay */
+      z-index: -1;
+}
     .hero img {
       position: absolute;
       top: 0;
@@ -153,7 +161,7 @@
       color: white;
       z-index: 2;
     }
-    
+
     .hero-content h1 {
       font-size: 4rem;
       font-weight: 800;

@@ -14,64 +14,7 @@
       scroll-behavior: smooth;
       font-family: 'Inter', sans-serif;
     }
-    .hero {
-      background: linear-gradient(to right, #000428, #004e92);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 100px 20px;
-      text-align: center;
-      min-height: 100vh;
-    }
 
-    .profile-img {
-      width: 250px;
-      height: 250px;
-      border-radius: 16px;
-      object-fit: cover;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      margin-bottom: 30px;
-    }
-
-    .hero-content {
-      max-width: 700px;
-    }
-
-    .hero-name {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 15px;
-    }
-
-    .hero-title {
-      font-size: 1.25rem;
-      font-weight: 500;
-      color: #b0d4f1;
-      margin-bottom: 5px;
-    }
-
-    .hero-role {
-      font-size: 1.15rem;
-      font-weight: 400;
-      color: #cdd9e5;
-      margin-bottom: 20px;
-    }
-
-    .resume-button {
-      background: #00ffd9;
-      color: #000;
-      padding: 14px 30px;
-      font-weight: 600;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .resume-button:hover {
-      background: #d2fff4;
-    }
     body {
       background: linear-gradient(to right, #000428, #004e92);
       color: #f0f0f0;
@@ -111,16 +54,14 @@
     }
 
     .hero {
-      background: url('monishwar.jpg');
+      background: url('monishwar.jpg') no-repeat center center/cover;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       min-height: 100vh;
-      overflow: hidden;
     }
-
 
     .hero::after {
       content: "";
@@ -129,40 +70,33 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* slightly dark overlay */
-      z-index: -1;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
     }
 
     .hero-content {
-      
-      color: white;
-      z-index: 1;
-      animation: fadeOut 5s ease-in-out forwards;
-      animation-delay: 4s;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
+      position: relative;
       z-index: 2;
+      color: white;
+      text-align: center;
+      padding: 20px;
     }
 
     .hero-content h1 {
-      font-size: 4rem;
+      font-size: 3.5rem;
       font-weight: 800;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .hero-content p {
       font-size: 1.4rem;
       color: #ccc;
-      margin: 5px 0;
+      margin: 8px 0;
     }
 
     .resume-button {
       background: #00ffd9;
-      color: #0b0c10;
+      color: #000;
       padding: 14px 32px;
       font-weight: bold;
       border-radius: 30px;
@@ -174,13 +108,13 @@
 
     .resume-button:hover {
       background: #004e92;
+      color: white;
     }
 
     section {
       padding: 80px 20px;
       max-width: 1200px;
       margin: auto;
-      animation: slideIn 1.2s ease;
     }
 
     section h2 {
@@ -204,8 +138,22 @@
       background: rgba(0, 255, 217, 0.05);
     }
 
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
     .card strong {
-      color: #004e92;
+      color: #00ffd9;
+      display: block;
+      margin-bottom: 8px;
     }
 
     .card a {
@@ -218,16 +166,7 @@
     }
 
     footer {
-      background: #0b0c10;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    @keyframes fadeOut {
-      0% { opacity: 1; }
-      100% { opacity: 0; visibility: hidden; }
+      display: none;
     }
 
     @media (max-width: 768px) {
@@ -235,19 +174,16 @@
         flex-direction: column;
         align-items: flex-start;
       }
+
       nav {
         margin-top: 10px;
         flex-wrap: wrap;
       }
-      .hero {
-        padding: 40px;
-      }
-      .hero img {
-        width: 80vw;
-      }
+
       .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
       }
+
       .hero-content p {
         font-size: 1.1rem;
       }
@@ -268,7 +204,6 @@
   </header>
 
   <section class="hero">
-    <div class="overlay"></div>
     <div class="hero-content">
       <h1>Monishwar Reddy</h1>
       <p>Student, Woxsen University</p>
@@ -277,109 +212,101 @@
     </div>
   </section>
 
-
   <section id="about">
     <h2>About Me</h2>
     <div class="card">
-      Hi, I’m Monishwar Reddy Vardireddy a Computer Science student with a strong interest in technology, research, and solving real-world problems. I’m currently studying at Woxsen University in Hyderabad, and I love working on things that can make life better and smarter.<br><br>
+      Hi, I’m Monishwar Reddy Vardireddy, a Computer Science student with a strong interest in technology, research, and solving real-world problems. I’m currently studying at Woxsen University in Hyderabad, and I love working on things that can make life better and smarter.<br><br>
 
-      Over the last couple of years, I’ve worked on different projects like using AI to detect heart problems from ECG signals, studying how diseases spread using math models, and even looking at how our brains react to ads! I’ve also published a few research papers along the way.<br><br>
+      I’ve worked on projects like using AI to detect heart problems from ECG signals, studying disease spread using math models, and analyzing brain response to ads. I’ve published research papers and interned at places like HCL Tech and Tiaano. With skills in Python, C, R, Jupyter, Power BI, and more, I enjoy using data to create meaningful solutions.<br><br>
 
-      I’ve done internships at companies like HCL Tech, Tianno and worked closely with my university on various research topics. With technical proficiency in Python, C, and R, along with tools like Jupyter Notebook, Power BI, VS Code, and Excel, I enjoy working on projects that are on innovation with purpose. Whether it's on EEG signals or mathematical modelling through data analytics, I believe in building solutions that make a difference.<br><br>
-
-      In short, I’m someone who believes that technology and knowledge can help us create a better future, and I’m excited to be a part of that journey.
+      I believe that technology and knowledge can help build a better future—and I’m excited to contribute.
     </div>
   </section>
 
-  
-
   <section id="internships">
-  <h2>Internships</h2>
-  <div class="card-grid">
-    <div class="card">
-      <img src="download-1.jpg" alt="RA" style="width:100%; border-radius:10px; margin-bottom:10px;" />
-      <strong>Research Assistant – Woxsen University</strong><br/>
-      Working on SEIR epidemic models and Monte Carlo simulations.
+    <h2>Internships</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="download-1.jpg" alt="RA">
+        <strong>Research Assistant – Woxsen University</strong>
+        Working on SEIR epidemic models and Monte Carlo simulations.
+      </div>
+      <div class="card">
+        <img src="download-2.jpg" alt="Intern">
+        <strong>Research Intern – Woxsen University</strong>
+        Exploring EEG and HMI models; contributed to scientific papers.
+      </div>
+      <div class="card">
+        <img src="download-3.jpg" alt="HCL">
+        <strong>Biomedical Signal Processing Intern – HCL Tech</strong>
+        Detection models for myocardial infarction.
+      </div>
+      <div class="card">
+        <img src="download-4.jpg" alt="TEDIS">
+        <strong>Founder – TEDIS Foundation</strong>
+        Tech & diplomacy platform with partnerships across India, UAE & Mongolia.
+      </div>
+      <div class="card">
+        <img src="download-5.jpg" alt="Tiaano">
+        <strong>R&D Analyst Intern – Tiaano</strong>
+        Delivered insights on innovation and engineering solutions.
+      </div>
+      <div class="card">
+        <img src="download-6.jpg" alt="DA">
+        <strong>Data Analyst Intern – Woxsen University</strong>
+        Helped drive social media analytics for university growth.
+      </div>
     </div>
-    <div class="card">
-      <img src="download-2.jpg" alt="Intern" style="width:100%; border-radius:10px; margin-bottom:10px;" />
-      <strong>Research Intern – Woxsen University</strong><br/>
-      Exploring EEG and HMI models; contributed to scientific papers.
-    </div>
-    <div class="card">
-      <img src="download-3.jpg" alt="HCL" style="width:100%; border-radius:10px; margin-bottom:10px;" />
-      <strong>Biomedical Signal Processing Intern – HCL Tech</strong><br/>
-      Detection models for myocardial infarction.
-    </div>
-    <div class="card">
-      <img src="download-4.jpg" alt="TEDIS" style="width:100%; border-radius:10px; margin-bottom:10px;" />
-      <strong>Founder – TEDIS Foundation</strong><br/>
-      Tech & diplomacy platform with partnerships across India, UAE & Mongolia.
-    </div>
-    <div class="card">
-      <img src="download-5.jpg" alt="Tiaano" style="width:100%; border-radius:10px; margin-bottom:10px;" />
-      <strong>R&D Analyst Intern – Tiaano</strong><br/>
-      Delivered insights on innovation and engineering solutions.
-    </div>
-    <div class="card">
-      <img src="download-6.jpg" alt="DA" style="width:100%; border-radius:10px; margin-bottom:10px;" />
-      <strong>Data Analyst Intern – Woxsen University</strong><br/>
-      Helped drive social media analytics for university growth.
-    </div>
-  </div>
-</section>
-<section id="newsletter">
-  <h2>Newsletter</h2>
-  <div class="card">
-    <p>Stay updated with my latest work and thoughts!</p>
-    <a href="https://www.linkedin.com/newsletters/7280177177575223296/ " target="_blank" class="resume-button">🔗 Follow my LinkedIn Newsletter</a>
-  </div>
-</section>
+  </section>
 
+  <section id="newsletter">
+    <h2>Newsletter</h2>
+    <div class="card">
+      <p>Stay updated with my latest work and thoughts!</p>
+      <a href="https://www.linkedin.com/newsletters/7280177177575223296/" target="_blank" class="resume-button">🔗 Follow my LinkedIn Newsletter</a>
+    </div>
+  </section>
 
-<section id="publications">
+  <section id="publications">
     <h2>Publications</h2>
     <div class="card-grid">
       <div class="card">
-        <strong>Plastic Waste Pyrolysis Review</strong><br/>
-        <a href="https://journals.stmjournals.com/jopc/article=2025/view=215242/" target="_blank">📄 View Paper</a><br/>
+        <strong>Plastic Waste Pyrolysis Review</strong>
+        <a href="https://journals.stmjournals.com/jopc/article=2025/view=215242/" target="_blank">📄 View Paper</a><br>
         Journal of Polymer and Composites, 2025.
       </div>
       <div class="card">
-        <strong>EEG in Neuromarketing</strong><br/>
-        <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521?" target="_blank">📘 View Chapter</a><br/>
+        <strong>EEG in Neuromarketing</strong>
+        <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521?" target="_blank">📘 View Chapter</a><br>
         IGI Global – Quantum AI Era of Neuromarketing.
       </div>
     </div>
   </section>
+
   <section id="conferences">
-  <h2>Conferences</h2>
-  <div class="card-grid">
-    <div class="card">
-      <img src="symmetry2024.png" alt="Conference Image" style="width:100%; border-radius:10px; margin-bottom:10px;" />
-      <strong>Symmetry2024 Conference </strong>
-      <br/>Participated and presented work on Review of solution procedures of certain ecological models .<br/><br/>
-      <a href="Symmetry 2024 certificate.pdf" target="_blank">📄 View Certificate</a>
+    <h2>Conferences</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="symmetry2024.png" alt="Conference Image">
+        <strong>Symmetry2024 Conference</strong>
+        Participated and presented work on Review of solution procedures of certain ecological models.<br>
+        <a href="Symmetry 2024 certificate.pdf" target="_blank">📄 View Certificate</a>
+      </div>
+      <div class="card">
+        <img src="logo.png" alt="Conference Image">
+        <strong>CHEMFLUX 11.0</strong>
+        Presented research work at CHEMFLUX 11.0 conducted by SRM University.<br>
+        <a href="conference-2.png" target="_blank">📄 View Certificate</a>
+      </div>
     </div>
-
-    <div class="card">
-      <img src="logo.png" alt="Conference Image" style="width:100%; border-radius:10px; margin-bottom:10px;" />
-      <strong>CHEMFLUX 11.0</strong><br/>
-      Presented my reseach work on in chemfluc 11.0 conducted by SRM University.<br/><br/>
-      <a href="conference-2.png" target="_blank">📄 View Certificate</a>
-    </div>
-  </div>
   </section>
-
 
   <section id="contact">
     <h2>Contact</h2>
     <div class="card">
-      <p>Email: <a href="mailto:monishwar26413@gmail.com.com">monishwar26413@gmail.com</a></p>
+      <p>Email: <a href="mailto:monishwar26413@gmail.com">monishwar26413@gmail.com</a></p>
       <p>GitHub: <a href="https://github.com/monishwar-reddy" target="_blank">https://github.com/monishwar-reddy</a></p>
     </div>
   </section>
-
-
 </body>
 </html>

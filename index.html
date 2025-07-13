@@ -13,6 +13,65 @@
       box-sizing: border-box;
       scroll-behavior: smooth;
       font-family: 'Inter', sans-serif;
+    .hero {
+      background: linear-gradient(to right, #000428, #004e92);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 20px;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      margin-bottom: 30px;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero-name {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+
+    .hero-title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #b0d4f1;
+      margin-bottom: 5px;
+    }
+
+    .hero-role {
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #cdd9e5;
+      margin-bottom: 20px;
+    }
+
+    .resume-button {
+      background: #00ffd9;
+      color: #000;
+      padding: 14px 30px;
+      font-weight: 600;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .resume-button:hover {
+      background: #d2fff4;
+    }
+
     }
 
     body {
@@ -55,61 +114,114 @@
 
     .hero {
       background: linear-gradient(to right, #000428, #004e92);
+      color: white;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 100px 20px;
       text-align: center;
       min-height: 100vh;
+      padding: 60px;
+      flex-direction: column;
+      animation: slideIn 1.2s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .profile-img {
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
+    .hero img {
+      width: 100vw;
+      height: 100vh;
       object-fit: cover;
-      box-shadow: 0 10px 30px rgba(0, 255, 217, 0.2);
-      margin-bottom: 30px;
+      border-radius: 0;
+      box-shadow: none;
+      margin-bottom: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
-
     .hero-content {
       max-width: 700px;
     }
 
-    .hero-name {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 15px;
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: bold;
     }
 
-    .hero-title {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #b0d4f1;
-      margin-bottom: 5px;
-    }
-
-    .hero-role {
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: #cdd9e5;
-      margin-bottom: 20px;
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin: 10px 0;
     }
 
     .resume-button {
       background: #00ffd9;
-      color: #000;
-      padding: 14px 30px;
-      font-weight: 600;
-      border-radius: 50px;
+      color: #0b0c10;
+      padding: 14px 32px;
+      font-weight: bold;
+      border-radius: 30px;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: background 0.3s ease;
+      display: inline-block;
+      margin-top: 20px;
     }
 
     .resume-button:hover {
-      background: #d2fff4;
+      background: #d4fff9;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+      animation: slideIn 1.2s ease;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #00ffd9;
+      text-transform: uppercase;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(0, 255, 217, 0.05);
+    }
+
+    .card strong {
+      color: #004e92;
+    }
+
+    .card a {
+      color: #00ffd9;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #0b0c10;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
@@ -122,14 +234,13 @@
         flex-wrap: wrap;
       }
       .hero {
-        padding: 60px 20px;
+        padding: 40px;
       }
-      .profile-img {
-        width: 180px;
-        height: 180px;
+      .hero img {
+        width: 80vw;
       }
-      .hero-name {
-        font-size: 2.2rem;
+      .hero-content {
+        text-align: center;
       }
     }
   </style>
@@ -156,6 +267,8 @@
       <a href="Monishwar_Resume.pdf" class="resume-button" download>📄 Download My Resume</a>
     </div>
   </section>
+
+
   <section id="about">
     <h2>About Me</h2>
     <div class="card">
@@ -168,6 +281,8 @@
       In short, I’m someone who believes that technology and knowledge can help us create a better future, and I’m excited to be a part of that journey.
     </div>
   </section>
+
+  
 
   <section id="internships">
   <h2>Internships</h2>

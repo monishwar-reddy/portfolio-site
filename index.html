@@ -21,6 +21,29 @@
       overflow-x: hidden;
     }
 
+    header {
+      background-color: #0b0c10;
+      color: #fff;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
     nav a {
       color: #fff;
       margin-left: 20px;
@@ -36,29 +59,33 @@
     .hero {
       background: linear-gradient(to right, #000428, #004e92);
       color: white;
-      padding: 120px 20px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
+      justify-content: space-between;
+      text-align: left;
       min-height: 100vh;
+      padding: 60px;
+      gap: 60px;
+      animation: slideIn 1.2s ease;
     }
 
     .hero img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      border: 5px solid #00ffd9;
-      margin-bottom: 25px;
+      max-width: 40vw;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 255, 217, 0.2);
     }
 
-    .hero h1 {
-      font-size: 3.2rem;
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
       font-weight: bold;
     }
 
-    .hero p {
+    .hero-content p {
       font-size: 1.2rem;
       color: #ccc;
       margin: 10px 0;
@@ -84,6 +111,7 @@
       padding: 80px 20px;
       max-width: 1200px;
       margin: auto;
+      animation: slideIn 1.2s ease;
     }
 
     section h2 {
@@ -92,12 +120,6 @@
       margin-bottom: 40px;
       color: #00ffd9;
       text-transform: uppercase;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
     }
 
     .card {
@@ -134,13 +156,28 @@
       font-size: 0.9rem;
     }
 
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     @media (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: flex-start;
       }
+      nav {
+        margin-top: 10px;
+      }
       .hero {
-        padding: 80px 20px;
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero img {
+        max-width: 80vw;
+      }
+      .hero-content {
+        text-align: center;
       }
     }
   </style>
@@ -157,16 +194,30 @@
     </nav>
   </header>
 
-  <section class="hero">
-  <div class="hero-content">
-    <img src="monish.jpeg" alt="Monishwar Reddy" class="profile-pic">
-    <h1>Monishwar Reddy</h1>
-    <p>Student, Woxsen University</p>
-    <p>Biomedical Signal Processing Intern, HCL Tech</p>
-    <a href="Monishwar_Resume.pdf" class="resume-button" download>📄 Download My Resume</a>
+  <section class="hero" style="background-image: url('monish.jpeg'); background-size: cover; background-position: center;">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Monishwar Reddy</h1>
+      <p>Student, Woxsen University</p>
+      <p>Biomedical Signal Processing Intern, HCL Tech</p>
+      <a href="Monishwar_Resume.pdf" class="resume-button" download>📄 Download My Resume</a>
+    </div>
   </div>
   </section>
 
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      Hi, I’m Monishwar Reddy Vardireddy a Computer Science student with a strong interest in technology, research, and solving real-world problems. I’m currently studying at Woxsen University in Hyderabad, and I love working on things that can make life better and smarter.<br><br>
+
+      Over the last couple of years, I’ve worked on different projects like using AI to detect heart problems from ECG signals, studying how diseases spread using math models, and even looking at how our brains react to ads! I’ve also published a few research papers along the way.<br><br>
+
+      I’ve done internships at companies like HCL Tech, Tianno and worked closely with my university on various research topics. With technical proficiency in Python, C, and R, along with tools like Jupyter Notebook, Power BI, VS Code, and Excel, I enjoy working on projects that are on innovation with purpose. Whether it's on EEG signals or mathematical modelling through data analytics, I believe in building solutions that make a difference.<br><br>
+
+      In short, I’m someone who believes that technology and knowledge can help us create a better future, and I’m excited to be a part of that journey.
+    </div>
+  </section>
 
   <section id="about">
     <h2>About Me</h2>

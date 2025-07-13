@@ -4,6 +4,54 @@
       box-sizing: border-box;
       scroll-behavior: smooth;
       font-family: 'Inter', sans-serif;
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      animation: fadeIn 1s ease;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6); /* dark overlay for text readability */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-content {
+      text-align: center;
+      color: #fff;
+      z-index: 2;
+      animation: slideIn 1.2s ease;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #e0e0e0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     }
 
     body {

@@ -41,7 +41,7 @@
     }
 
     .hero {
-      background: url('monishwar.jpg') center center/cover no-repeat;
+      background: #000; /* Fallback */
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -50,7 +50,32 @@
       position: relative;
       padding-left: 60px;
     }
+    .scrolling-images {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      animation: scrollHero 20s linear infinite;
+      width: max-content;
+      height: 100%;
+      z-index: 0;
+    }
 
+    .scrolling-images img {
+      height: 100vh;
+      width: auto;
+      flex-shrink: 0;
+      opacity: 0.4;
+      object-fit: cover;
+    }
+    @keyframes scrollHero {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
     .hero::after {
       content: "";
       position: absolute;
@@ -59,9 +84,11 @@
     }
 
     .hero-content {
+      position: relative;
       max-width: 500px;
       color: #fff;
       z-index: 1;
+      text-align: left;
     }
 
     .hero-content h1 {
@@ -144,8 +171,8 @@
     }
 
     .newsletter-button {
-      background-color: #00ffd9;
-      color: #000;
+      background-color: #000;
+      color: #00ffd9;
       padding: 12px 25px;
       border-radius: 30px;
       display: inline-block;

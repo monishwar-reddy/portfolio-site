@@ -159,8 +159,11 @@
 
     .card img {
       width: 100%;
+      height: 180px; /* Fixed height */
+      object-fit: cover; /* Makes the image fill without stretching */
       border-radius: 10px;
       margin-bottom: 10px;
+      background: #fff; 
     }
 
     .card strong {
@@ -171,12 +174,16 @@
     }
 
     .card a {
+      display: inline-block;
+      margin-top: 6px;
       color: #00ffd9;
       text-decoration: none;
+      font-weight: 500;
     }
 
     .card a:hover {
       text-decoration: underline;
+      color: #00c6ff;
     }
 
     .newsletter-button {
@@ -251,6 +258,7 @@
     <nav>
       <a href="#about">About</a>
       <a href="#Experience">Internships</a>
+      <a href="#hackathons">Hackathons</a>
       <a href="#newsletter">Newsletter</a>
       <a href="#publications">Publications</a>
       <a href="#conferences">Conferences</a>
@@ -275,9 +283,8 @@
     <img src="monishwar-6.jpeg" alt="Slide 6" />
   </div>
     <div class="hero-content">
-      <h1>Monishwar Reddy</h1>
+      <h1>Monishwar Reddy Vardireddy</h1>
       <p>Student, Woxsen University</p>
-      <p>Biomedical Signal Processing Intern, HCL Tech</p>
       <a href="Monishwar_Resume.pdf" class="resume-button" download>📄 Download My Resume</a>
     </div>
   </section>
@@ -296,7 +303,7 @@
       <div class="card">
         <img src="download-1.jpg" alt="RA">
         <strong>Research Assistant – Woxsen University</strong><br>
-        SEIR epidemic modeling and simulations.
+        SEIR, Monte Carlo model Analysis.
       </div>
       <div class="card">
         <img src="download-2.jpg" alt="Intern">
@@ -305,22 +312,24 @@
       </div>
       <div class="card">
         <img src="download-3.jpg" alt="HCL">
-        <strong>Biomedical Intern – HCL Tech</strong><br>
-        AI for myocardial infarction detection.
+        <strong>Biomedical signal processing intern – HCL Tech</strong><br>
+        Myocardial infarction detection .
       </div>
       <div class="card">
         <img src="download-4.jpg" alt="TEDIS">
         <strong>Founder – TEDIS Foundation</strong><br>
-        Diplomacy & tech platform India/UAE/Mongolia.
+        Diplomacy & tech platform India/UAE/Mongolia through MUNs.
+        <a href="https://www.linkedin.com/company/tedis-foundation/" target="_blank">🔗 LinkedIn</a><br>
+        <a href="https://www.instagram.com/tedis_foundation?igsh=MXhwdDZobXM3c2RqcA==" target="_blank">📸 Instagram</a>
       </div>
       <div class="card">
         <img src="download-5.jpg" alt="Tiaano">
-        <strong>R&D Intern – Tiaano</strong><br>
-        Innovation & engineering analysis.
+        <strong>R&D Analyst Intern – Tiaano</strong><br>
+        Innovation & Insights analysis.
       </div>
       <div class="card">
         <img src="download-6.jpg" alt="DA">
-        <strong>Data Analyst – Woxsen University</strong><br>
+        <strong>Data Analyst Intern – Woxsen University</strong><br>
         Social media analytics & visualization.
       </div>
     </div>
@@ -333,17 +342,28 @@
       <a href="https://www.linkedin.com/newsletters/7280177177575223296/" target="_blank" class="newsletter-button">🔗 Follow My LinkedIn Newsletter</a>
     </div>
   </section>
-
+  <section id="hackathons">
+    <h2>Hackathons</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="Hack-1.jpeg" alt="Hackathon 1">
+        <strong>Udhgam 2025 DigiTech hackathon – 3st Prize</strong><br>
+        We built a ticketing platform to help small event organizers with sales, payments, and check-ins.
+        <a href="hackback.jpeg" target="_blank">📄 View Certificate</a
+      </div>
+  </section>
   <section id="publications">
     <h2>Publications</h2>
     <div class="card-grid">
       <div class="card">
-        <strong>Plastic Waste Pyrolysis Review</strong><br>
+        <img src="plastic-paper.png" alt="Plastic Waste Pyrolysis">
+        <strong>Various Methods For Plastic Waste Pyrolysis To Fuels: A Review</strong><br>
         <a href="https://journals.stmjournals.com/jopc/article=2025/view=215242/" target="_blank">📄 View Paper</a><br>
         Journal of Polymer and Composites, 2025.
       </div>
       <div class="card">
-        <strong>EEG in Neuromarketing</strong><br>
+        <img src="eeg-neuromarketing.png" alt="EEG in Neuromarketing">
+        <strong>Integrating EEG Analysis to Illuminate Consumer Behavior and Optimize Marketing Strategies</strong><br>
         <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521" target="_blank">📘 View Chapter</a><br>
         IGI Global – Quantum AI Neuromarketing.
       </div>

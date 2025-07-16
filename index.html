@@ -181,13 +181,9 @@
       background-color: #fff;
     }
     #hackathons .card img {
-      width: 100%;
-      height: 180px;
-      max-height: 250px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      background: #fff;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
 }
     .card strong {
       display: block;

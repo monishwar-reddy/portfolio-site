@@ -142,10 +142,10 @@
 
     .card, .card-grid .card {
       background: rgba(255, 255, 255, 0.05);
-      padding: 10px 15px;
+      padding: 10px 12px;
       border-radius: 14px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       transition: transform 0.3s;
     }
 
@@ -156,30 +156,24 @@
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 16px;
     }
 
     .card img {
       width: 100%;
       height: 180px; /* Fixed height */
 
-      object-fit: contain;
+      object-fit: Cover;
 
       border-radius: 10px;
       margin-bottom: 10px;
-      background: #fff; 
-      padding: 10px; /* Optional padding inside the white box */
+      background: None; 
+      padding: 0; /* Optional padding inside the white box */
       display: block;
       margin: 0 auto 10px auto;
       
     }
-    .fix-bg {
-      background-color: #fff;
-      padding: 10px;
-      border-radius: 10px;
-      object-fit: contain !important;
-      max-height: 180px;
-    }
+
 
     #publications .card img {
       height: auto !important;
@@ -380,7 +374,8 @@
         <strong>Udhgam 2025 DigiTech Hackathon – 3st Prize</strong><br>
         We built a Ticketing Platform to Help Small Event Organizers With Sales, Payments, and Check-Ins.
         <a href="Hack-1.jpeg" target="_blank">View Certificate</a
-      </div>
+      </div>  
+    </div>
   </section>
   <section id="publications">
     <h2>Publications</h2>

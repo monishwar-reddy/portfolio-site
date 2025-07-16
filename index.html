@@ -142,10 +142,10 @@
 
     .card, .card-grid .card {
       background: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-      margin-bottom: 30px;
+      padding: 10px 15px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      margin-bottom: 25px;
       transition: transform 0.3s;
     }
 
@@ -164,11 +164,23 @@
       height: 180px; /* Fixed height */
 
       object-fit: contain;
-      
+
       border-radius: 10px;
       margin-bottom: 10px;
       background: #fff; 
+      padding: 10px; /* Optional padding inside the white box */
+      display: block;
+      margin: 0 auto 10px auto;
+      
     }
+    .fix-bg {
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      object-fit: contain !important;
+      max-height: 180px;
+    }
+
     #publications .card img {
       height: auto !important;
       max-height: 200px !important;
@@ -298,12 +310,12 @@
     <div class="hero-content">
       <h1>Monishwar Reddy Vardireddy</h1>
       <p>Student, Woxsen University</p>
-      <a href="Monishwar_Resume.pdf" class="resume-button" download>📄 Download My Resume</a>
+      <a href="Monishwar_Resume.pdf" class="resume-button" download>Download My Resume</a>
     </div>
     <div style="position: absolute; bottom: 20px; left: 60px; z-index: 2;">
-      <button onclick="startScroll()">▶️ Start</button>
-      <button onclick="pauseScroll()">⏸ Pause</button>
-      <button onclick="resetScroll()">🔁 Reset</button>
+      <button onclick="startScroll()">▶️</button>
+      <button onclick="pauseScroll()">⏸</button>
+      <button onclick="resetScroll()">🔁</button>
     </div>
   </section>
 
@@ -319,26 +331,26 @@
     <h2>Internships</h2>
     <div class="card-grid">
       <div class="card">
-        <img src="download-1.jpg" alt="RA">
+        <img src="download-1.jpg" alt="RA" class="fix-bg">
         <strong>Research Assistant – Woxsen University</strong><br>
         SEIR, Monte Carlo model Analysis.
       </div>
       <div class="card">
-        <img src="download-2.jpg" alt="Intern">
+        <img src="download-2.jpg" alt="Intern" class="fix-bg">
         <strong>Research Intern – Woxsen University</strong><br>
-        EEG/HMI research and publications.
+        EEG/HMI Research and Publications.
       </div>
       <div class="card">
-        <img src="download-3.jpg" alt="HCL">
-        <strong>Biomedical signal processing intern – HCL Tech</strong><br>
-        Myocardial infarction detection .
+        <img src="download-3.jpg" alt="HCL" class="fix-bg">
+        <strong>Biomedical Signal Processing Intern – HCL Tech</strong><br>
+        Myocardial Infarction Detection .
       </div>
       <div class="card">
         <img src="download-4.jpg" alt="TEDIS">
         <strong>Founder – TEDIS Foundation</strong><br>
-        Diplomacy & tech platform India/UAE/Mongolia through MUNs.
-        <a href="https://www.linkedin.com/company/tedis-foundation/" target="_blank">🔗 LinkedIn</a><br>
-        <a href="https://www.instagram.com/tedis_foundation?igsh=MXhwdDZobXM3c2RqcA==" target="_blank">📸 Instagram</a>
+        Global MUN Conferences on Diplomacy and Technology.
+        <a href="https://www.linkedin.com/company/tedis-foundation/" target="_blank">LinkedIn</a><br>
+        <a href="https://www.instagram.com/tedis_foundation?igsh=MXhwdDZobXM3c2RqcA==" target="_blank">Instagram</a>
       </div>
       <div class="card">
         <img src="download-5.jpg" alt="Tiaano">
@@ -348,7 +360,7 @@
       <div class="card">
         <img src="download-6.jpg" alt="DA">
         <strong>Data Analyst Intern – Woxsen University</strong><br>
-        Social media analytics & visualization.
+        Social Media Analytics & Visualization.
       </div>
     </div>
   </section>
@@ -357,7 +369,7 @@
     <h2>Newsletter</h2>
     <div class="card">
       <p>Stay updated with my latest work and thoughts!</p>
-      <a href="https://www.linkedin.com/newsletters/7280177177575223296/" target="_blank" class="newsletter-button">🔗 Follow My LinkedIn Newsletter</a>
+      <a href="https://www.linkedin.com/newsletters/7280177177575223296/" target="_blank" class="newsletter-button">Follow My LinkedIn Newsletter</a>
     </div>
   </section>
   <section id="hackathons">
@@ -365,9 +377,9 @@
     <div class="card-grid">
       <div class="card">
         <img src="hackback.jpeg" alt="Hackathon 1">
-        <strong>Udhgam 2025 DigiTech hackathon – 3st Prize</strong><br>
-        We built a ticketing platform to help small event organizers with sales, payments, and check-ins.
-        <a href="Hack-1.jpeg" target="_blank">📄 View Certificate</a
+        <strong>Udhgam 2025 DigiTech Hackathon – 3st Prize</strong><br>
+        We built a Ticketing Platform to Help Small Event Organizers With Sales, Payments, and Check-Ins.
+        <a href="Hack-1.jpeg" target="_blank">View Certificate</a
       </div>
   </section>
   <section id="publications">
@@ -375,14 +387,14 @@
     <div class="card-grid">
       <div class="card">
         <img src="plastic-paper.png" alt="Plastic Waste Pyrolysis">
-        <strong>Various Methods For Plastic Waste Pyrolysis To Fuels: A Review</strong><br>
-        <a href="https://journals.stmjournals.com/jopc/article=2025/view=215242/" target="_blank">📄 View Paper</a><br>
+        <strong>Various Methods for Plastic Waste Pyrolysis to Fuels: A Review</strong><br>
+        <a href="https://journals.stmjournals.com/jopc/article=2025/view=215242/" target="_blank">View Paper</a><br>
         Journal of Polymer and Composites, 2025.
       </div>
       <div class="card">
         <img src="eeg-neuromarketing.png" alt="EEG in Neuromarketing">
         <strong>Integrating EEG Analysis to Illuminate Consumer Behavior and Optimize Marketing Strategies</strong><br>
-        <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521" target="_blank">📘 View Chapter</a><br>
+        <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521" target="_blank">View Chapter</a><br>
         IGI Global – Quantum AI Neuromarketing.
       </div>
     </div>
@@ -394,14 +406,14 @@
       <div class="card">
         <img src="symmetry2024.png" alt="Symmetry Conference">
         <strong>Symmetry2024 Conference</strong><br>
-        Presented ecological model analysis.<br>
-        <a href="Symmetry 2024 certificate.pdf" target="_blank">📄 View Certificate</a>
+        Presented Ecological Model Analysis.<br>
+        <a href="Symmetry 2024 certificate.pdf" target="_blank">View Certificate</a>
       </div>
       <div class="card">
         <img src="logo.png" alt="Chemflux Conference">
         <strong>CHEMFLUX 11.0</strong><br>
         Presented at SRM University.<br>
-        <a href="conference-2.png" target="_blank">📄 View Certificate</a>
+        <a href="conference-2.png" target="_blank">View Certificate</a>
       </div>
     </div>
   </section>

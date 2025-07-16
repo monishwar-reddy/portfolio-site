@@ -55,7 +55,8 @@
       top: 0;
       left: 0;
       display: flex;
-      animation: scrollHero 20s linear infinite;
+      animation: scrollHero 25s linear forwards;
+      animation-play-state: paused; /* start paused */
       width: max-content;
       height: 100%;
       z-index: 0;
@@ -150,10 +151,35 @@
 
     .card img {
       width: 100%;
+      height: 180px; /* Fixed height */
+      max-height: 250px; /* limit max height to ensure uniformity */
+      object-fit: contain;
+      object-fit: cover; /* Makes the image fill without stretching */
       border-radius: 10px;
       margin-bottom: 10px;
+      background: #fff; 
     }
-
+    #publications .card img {
+      height: auto !important;
+      max-height: 200px !important;
+      object-fit: contain !important;
+      background-color: #fff;
+    }
+    #conferences .card img {
+      height: auto !important;
+      max-height: 200px !important;
+      object-fit: contain !important;
+      background-color: #fff;
+    }
+    #hackathons .card img {
+      width: 100%;
+      height: 180px;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: #fff;
+}
     .card strong {
       display: block;
       margin-bottom: 8px;
@@ -162,12 +188,16 @@
     }
 
     .card a {
+      display: inline-block;
+      margin-top: 6px;
       color: #00ffd9;
       text-decoration: none;
+      font-weight: 500;
     }
 
     .card a:hover {
       text-decoration: underline;
+      color: #00c6ff;
     }
 
     .newsletter-button {

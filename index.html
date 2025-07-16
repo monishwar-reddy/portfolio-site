@@ -64,7 +64,8 @@
       top: 0;
       left: 0;
       display: flex;
-      animation: scrollHero 20s linear infinite;
+      animation: scrollHero 25s linear forwards;
+      animation-play-state: paused; /* start paused */
       width: max-content;
       height: 100%;
       z-index: 0;
@@ -160,12 +161,34 @@
     .card img {
       width: 100%;
       height: 180px; /* Fixed height */
+      max-height: 250px; /* limit max height to ensure uniformity */
+      object-fit: contain;
       object-fit: cover; /* Makes the image fill without stretching */
       border-radius: 10px;
       margin-bottom: 10px;
       background: #fff; 
     }
-
+    #publications .card img {
+      height: auto !important;
+      max-height: 200px !important;
+      object-fit: contain !important;
+      background-color: #fff;
+    }
+    #conferences .card img {
+      height: auto !important;
+      max-height: 200px !important;
+      object-fit: contain !important;
+      background-color: #fff;
+    }
+    #hackathons .card img {
+      width: 100%;
+      height: 180px;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: #fff;
+}
     .card strong {
       display: block;
       margin-bottom: 8px;
@@ -274,18 +297,16 @@
     <img src="monishwar-4.jpeg" alt="Slide 4" />
     <img src="monishwar-5.jpeg" alt="Slide 5" />
     <img src="monishwar-6.jpeg" alt="Slide 6" />
-    <!-- Repeat same 5 images again for infinite loop effect -->
-    <img src="monishwar-1.jpg" alt="Slide 1" />
-    <img src="monishwar-2.jpeg" alt="Slide 2" />
-    <img src="monishwar-3.jpeg" alt="Slide 3" />
-    <img src="monishwar-4.jpeg" alt="Slide 4" />
-    <img src="monishwar-5.jpeg" alt="Slide 5" />
-    <img src="monishwar-6.jpeg" alt="Slide 6" />
-  </div>
+    </div>
     <div class="hero-content">
       <h1>Monishwar Reddy Vardireddy</h1>
       <p>Student, Woxsen University</p>
       <a href="Monishwar_Resume.pdf" class="resume-button" download>📄 Download My Resume</a>
+    </div>
+    <div style="position: absolute; bottom: 20px; left: 60px; z-index: 2;">
+      <button onclick="startScroll()">▶️ Start</button>
+      <button onclick="pauseScroll()">⏸ Pause</button>
+      <button onclick="resetScroll()">🔁 Reset</button>
     </div>
   </section>
 
@@ -395,5 +416,23 @@
       <p>GitHub: <a href="https://github.com/monishwar-reddy" target="_blank">https://github.com/monishwar-reddy</a></p>
     </div>
   </section>
+  <script>
+    window.onload = function () {
+      const scroller = document.querySelector('.scrolling-images');
+      document.querySelector('button[onclick="startScroll()"]').onclick = function () {
+        scroller.style.animationPlayState = 'running';
+      };
+
+      document.querySelector('button[onclick="pauseScroll()"]').onclick = function () {
+        scroller.style.animationPlayState = 'paused';
+      };
+
+      document.querySelector('button[onclick="resetScroll()"]').onclick = function () {
+        scroller.style.animation = 'none';
+        void scroller.offsetWidth;
+        scroller.style.animation = 'scrollHero 25s linear forwards';
+      };
+    };
+  </script>
 </body>
 </html> 

@@ -75,7 +75,7 @@
     }
 
     .slide.active {
-      opacity: 0.5; /* Set this to your preferred opacity */
+      opacity: 1; /* Set this to your preferred opacity */
       z-index: 1;
     }
 
@@ -153,7 +153,8 @@
 
     .card img {
       width: 100%;
-      height: 180px; /* Fixed height */
+      height: auto;
+      max-height: 300px; /* Fixed height */
 
       object-fit: Cover;
 
@@ -190,7 +191,7 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s;
       margin-bottom: 5px;
-      max-width: 300px; 
+      width: 100%;
     }
 
     #publications .card img {
@@ -314,4 +315,3 @@
         background-color: transparent;
       }
     }
-    

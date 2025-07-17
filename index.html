@@ -50,14 +50,15 @@
     }
 
     .hero {
-      background: #000; /* Fallback */
+      background: #6e6d6d; /* Fallback */
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: flex-start;
-      min-height: 100vh;
+      height: 100vh; /* Full viewport height */
+      width: 100vw; /* Full viewport width */
       text-align: left;
       position: relative;
-      padding-left: 60px;
+      padding: 40px 60px;
       overflow: hidden;
     }
     .slideshow-container {
@@ -99,7 +100,7 @@
       max-width: 500px;
       color: #fff;
       z-index: 1;
-      text-align: left;
+      text-align: absolute;
     }
 
     .hero-content h1 {
@@ -197,7 +198,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s;
-      margin-bottom: 20px;
+      margin-bottom: 5px;
       max-width: 300px; 
     }
 
@@ -365,11 +366,7 @@
       <p>Student, Woxsen University</p>
       <a href="Monishwar_Resume.pdf" class="resume-button" download>Download My Resume</a>
     </div>
-    <div style="position: absolute; bottom: 20px; left: 60px; z-index: 2;">
-      <button onclick="startScroll()">▶️</button>
-      <button onclick="pauseScroll()">⏸</button>
-      <button onclick="resetScroll()">🔁</button>
-    </div>
+
   </section>
 
   <section id="about">
@@ -383,7 +380,7 @@
   <section id="Experience">
     <h2>Experience</h2>
     <div class="card-grid">
-      <div class="tedis-img">
+      <div class="card">
         <img src="download-1.jpg" alt="RA" class="tedis-img">
         <strong>Research Assistant – Woxsen University</strong><br>
         SEIR, Monte Carlo model Analysis.
@@ -398,7 +395,7 @@
         <strong>Biomedical Signal Processing Intern – HCL Tech</strong><br>
         Myocardial Infarction Detection .
       </div>
-      <div class="tedis-img">
+      <div class="card">
         <img src="download-4.jpg" alt="TEDIS" class="tedis-img">
         <strong>Founder – TEDIS Foundation</strong><br><br>
         Global MUN Conferences on Diplomacy and Technology.<br>
@@ -479,24 +476,7 @@
       <p>GitHub: <a href="https://github.com/monishwar-reddy" target="_blank">https://github.com/monishwar-reddy</a></p>
     </div>
   </section>
-  <script>
-    window.onload = function () {
-      const scroller = document.querySelector('.scrolling-images');
-      document.querySelector('button[onclick="startScroll()"]').onclick = function () {
-        scroller.style.animationPlayState = 'running';
-      };
-
-      document.querySelector('button[onclick="pauseScroll()"]').onclick = function () {
-        scroller.style.animationPlayState = 'paused';
-      };
-
-      document.querySelector('button[onclick="resetScroll()"]').onclick = function () {
-        scroller.style.animation = 'none';
-        void scroller.offsetWidth;
-        scroller.style.animation = 'scrollHero 25s linear forwards';
-      };
-    };
-  </script>
+  
   <script>
     let slideIndex = 0;
     const slides = document.querySelectorAll(".slide");

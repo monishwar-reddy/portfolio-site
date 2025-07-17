@@ -41,14 +41,15 @@
     }
 
     .hero {
-      background: #000; /* Fallback */
+      background: #6e6d6d; /* Fallback */
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: flex-start;
-      min-height: 100vh;
+      height: 100vh; /* Full viewport height */
+      width: 100vw; /* Full viewport width */
       text-align: left;
       position: relative;
-      padding-left: 60px;
+      padding: 40px 60px;
       overflow: hidden;
     }
     .slideshow-container {
@@ -90,7 +91,7 @@
       max-width: 500px;
       color: #fff;
       z-index: 1;
-      text-align: left;
+      text-align: absolute;
     }
 
     .hero-content h1 {
@@ -188,7 +189,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s;
-      margin-bottom: 20px;
+      margin-bottom: 5px;
       max-width: 300px; 
     }
 
@@ -313,3 +314,4 @@
         background-color: transparent;
       }
     }
+    

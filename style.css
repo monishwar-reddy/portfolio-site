@@ -1,4 +1,4 @@
-    * {
+* {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -7,12 +7,12 @@
     }
 
     body {
-      background: linear-gradient(to right, #0d003c, #004e92);
+      background: linear-gradient(to right, #0e0140, #004e92);
       color: #f0f0f0;
     }
 
     header {
-      background: #6e6e6f;
+      background: #0b0c10;
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
@@ -76,22 +76,6 @@
     .slide.active {
       opacity: 0.5; /* Set this to your preferred opacity */
       z-index: 1;
-    }
-    .profile-slider {
-      width: 100%;
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .swiper-slide img {
-      width: 100%;
-      height: auto;
-      max-height: 500px;
-      object-fit: cover;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     }
 
     .hero::after {
@@ -183,11 +167,13 @@
     .tedis-img {
       width: auto;
       height: auto;
-      max-width: 100%;
-      object-fit: unset;
+       /* you can adjust this to make it bigger */
+      object-fit: contain;
       display: block;
-      margin: 0 auto;
+      margin: 0 auto 10px auto;
       background-color: #fff; /* optional for logos */
+      padding: 8px;
+      border-radius: 10px;
     }
 
     #publications .card-grid {
@@ -327,4 +313,3 @@
         background-color: transparent;
       }
     }
-    

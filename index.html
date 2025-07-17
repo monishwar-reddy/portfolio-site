@@ -54,7 +54,7 @@
       display: flex;
       align-items: flex-end;
       justify-content: flex-start;
-      height: 60vw; /* Full viewport height */
+      height: 100vh; /* Full viewport height */
       width: 100vw; /* Full viewport width */
       text-align: left;
       position: relative;
@@ -175,7 +175,17 @@
       margin: 0 auto 10px auto;
       
     }
-    
+    .tedis-img {
+      width: auto;
+      height: auto;
+       /* you can adjust this to make it bigger */
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 10px auto;
+      background-color: #fff; /* optional for logos */
+      padding: 8px;
+      border-radius: 10px;
+    }
 
     #publications .card-grid {
       display: grid;
@@ -346,7 +356,7 @@
   <section class="hero">
     <div class="slideshow-container">
     <img class="slide" src="monishwar-1.jpg" alt="Slide 1" />
-    <img class="slide" src="monishwars-2.jpg" alt="Slide 2" />
+    <img class="slide" src="monishwares-2.jpeg" alt="Slide 2" />
     <img class="slide" src="monishwar-3.jpeg" alt="Slide 3" />
     <img class="slide" src="monishwar-4.jpeg" alt="Slide 4" />
     <img class="slide" src="monishwar-5.jpeg" alt="Slide 5" />
@@ -372,22 +382,22 @@
     <h2>Experience</h2>
     <div class="card-grid">
       <div class="card">
-        <img src="downloads-1.jpg" alt="RA" 
+        <img src="downloads-1.jpg" alt="RA" class="tedis-img">
         <strong>Research Assistant – Woxsen University</strong><br>
         SEIR, Monte Carlo model Analysis.
       </div>
       <div class="card">
-        <img src="downloades-2.jpg" alt="Intern" 
+        <img src="downloades-2.jpg" alt="Intern" class="fix-bg">
         <strong>Research Intern – Woxsen University</strong><br>
         EEG/HMI Research and Publications.
       </div>
       <div class="card">
-        <img src="downloads-3.jpg" alt="HCL" 
+        <img src="downloads-3.jpg" alt="HCL" class="fix-bg">
         <strong>Biomedical Signal Processing Intern – HCL Tech</strong><br>
         Myocardial Infarction Detection .
       </div>
       <div class="card">
-        <img src="downloads-4.jpg" alt="TEDIS" 
+        <img src="downloads-4.jpg" alt="TEDIS" class="tedis-img">
         <strong>Founder – TEDIS Foundation</strong><br><br>
         Global MUN Conferences on Diplomacy and Technology.<br>
         <a href="https://www.linkedin.com/company/tedis-foundation/" target="_blank">LinkedIn</a><br>

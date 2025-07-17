@@ -7,7 +7,7 @@
     }
 
     body {
-      background: linear-gradient(to right, #000428, #004e92);
+      background: linear-gradient(to right, #696969, #004e92);
       color: #f0f0f0;
     }
 
@@ -51,33 +51,33 @@
       padding-left: 60px;
       overflow: hidden;
     }
-    .scrolling-images {
+    .slideshow-container {
       position: absolute;
       top: 0;
       left: 0;
-      display: flex;
-      animation: scrollHero 25s linear forwards;
-      animation-play-state: paused; /* start paused */
-      width: max-content;
-      height: 100%;
+      height: 100vh;
+      width: 100%;
       z-index: 0;
+      overflow: hidden;
     }
 
-    .scrolling-images img {
-      height: 100vh;
-      width: auto;
-      flex-shrink: 0;
-      opacity: 0.4;
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
       object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
-    @keyframes scrollHero {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
+
+    .slide.active {
+      opacity: 0.5; /* Set this to your preferred opacity */
+      z-index: 1;
     }
+
     .hero::after {
       content: "";
       position: absolute;
@@ -164,11 +164,23 @@
       margin: 0 auto 10px auto;
       
     }
+    .tedis-img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 220px; /* you can adjust this to make it bigger */
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 10px auto;
+      background-color: #fff; /* optional for logos */
+      padding: 8px;
+      border-radius: 10px;
+    }
 
     #publications .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 5px;
     }
 
     #publications .card {
@@ -242,7 +254,7 @@
     }
 
     .newsletter-button {
-      background-color: #0b039a;
+
       color: #00ffd9;
       padding: 12px 25px;
       border-radius: 30px;
@@ -302,3 +314,4 @@
         background-color: transparent;
       }
     }
+    

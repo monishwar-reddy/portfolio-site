@@ -16,12 +16,12 @@
     }
 
     body {
-      background: linear-gradient(to right, #696969, #004e92);
+      background: linear-gradient(to right, #0d003c, #004e92);
       color: #f0f0f0;
     }
 
     header {
-      background: #0b0c10;
+      background: #6e6e6f;
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
@@ -85,6 +85,22 @@
     .slide.active {
       opacity: 0.5; /* Set this to your preferred opacity */
       z-index: 1;
+    }
+    .profile-slider {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     }
 
     .hero::after {
@@ -177,13 +193,10 @@
       width: auto;
       height: auto;
       max-width: 100%;
-      max-height: 220px; /* you can adjust this to make it bigger */
-      object-fit: contain;
+      object-fit: unset;
       display: block;
-      margin: 0 auto 10px auto;
+      margin: 0 auto;
       background-color: #fff; /* optional for logos */
-      padding: 8px;
-      border-radius: 10px;
     }
 
     #publications .card-grid {
@@ -335,6 +348,10 @@
         }
       });
     });
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
   </script>
 </head>
 <body>
@@ -353,12 +370,33 @@
 
   <section class="hero">
     <div class="slideshow-container">
-    <img class="slide" src="monishwar-1.jpg" alt="Slide 1" />
-    <img class="slide" src="monishwar-2.jpeg" alt="Slide 2" />
-    <img class="slide" src="monishwar-3.jpeg" alt="Slide 3" />
-    <img class="slide" src="monishwar-4.jpeg" alt="Slide 4" />
-    <img class="slide" src="monishwar-5.jpeg" alt="Slide 5" />
-    <img class="slide" src="monishwar-6.jpeg" alt="Slide 6" />
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img class="slide" src="monishwar-1.jpg" alt="Slide 1" />
+          </div>
+          <div class="swiper-slide">
+            <img class="slide" src="monishwar-2.jpeg" alt="Slide 2" />
+          </div>
+          <div class="swiper-slide">
+            <img class="slide" src="monishwar-3.jpeg" alt="Slide 3" />
+          </div>
+          <div class="swiper-slide">
+            <img class="slide" src="monishwar-4.jpeg" alt="Slide 4" />
+          </div>
+          <div class="swiper-slide">
+            <img class="slide" src="monishwar-5.jpeg" alt="Slide 5" />
+          </div>
+          <div class="swiper-slide">
+            <img class="slide" src="monishwar-6.jpeg" alt="Slide 6" />
+          </div>
+      <!-- Add more profile photos here -->
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    
+    <!-- Pagination dots -->
+        <div class="swiper-pagination"></div>
     </div>
     <div class="hero-content">
       <h1>Monishwar Reddy Vardireddy</h1>
@@ -513,5 +551,25 @@
     showSlides(); // Show the first one immediately
     setInterval(showSlides, 4000); // Change every 4s
   </script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- Swiper initialization only for profile slider -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
 </body>
 </html> 

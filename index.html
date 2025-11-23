@@ -187,6 +187,17 @@
       border-radius: 10px;
     }
 
+    /* Make all Experience section images equal size */
+    #Experience .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
     #publications .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -238,16 +249,25 @@
 
     #hackathons .card img {
       width: 100%;
-      height: 180px;
-      object-fit: cover;
+      height: 200px;
+      object-fit: contain;
       border-radius: 10px;
       margin-bottom: 10px;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 10px;
     }
     .card strong {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       font-weight: 600;
       color: #00ffd9;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      margin: 10px 0;
+      line-height: 1.6;
+      color: #e0e0e0;
     }
 
     .card a {
@@ -262,6 +282,60 @@
       text-decoration: underline;
       color: #00c6ff;
     }
+
+    /* Button Links for Cards */
+    .btn-link {
+      display: block;
+      background: linear-gradient(135deg, #00ffd9, #00c6ff);
+      color: #000 !important;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 12px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 255, 217, 0.3);
+      text-align: center;
+      width: fit-content;
+    }
+
+    .btn-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 255, 217, 0.5);
+      text-decoration: none;
+      color: #000 !important;
+    }
+
+    .btn-link i {
+      margin-right: 8px;
+    }
+
+    /* Projects Section */
+    #projects .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    #projects .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    #projects .card-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #projects .card p {
+      flex: 1;
+      margin: 10px 0;
+      line-height: 1.6;
+    }
     #newsletter .card {
       text-align: center;
     }
@@ -273,6 +347,123 @@
       border-radius: 30px;
       display: inline-block;
       font-weight: 600;
+    }
+
+    /* Social Links Buttons */
+    .social-links-card {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      padding: 20px;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-btn i {
+      font-size: 1.2rem;
+    }
+
+    .email-btn {
+      background: linear-gradient(135deg, #ea4335, #d32f2f);
+      color: #fff;
+    }
+
+    .email-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(234, 67, 53, 0.4);
+    }
+
+    .github-btn {
+      background: linear-gradient(135deg, #333, #24292e);
+      color: #fff;
+    }
+
+    .github-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(36, 41, 46, 0.4);
+    }
+
+    .linkedin-btn {
+      background: linear-gradient(135deg, #0077b5, #005582);
+      color: #fff;
+    }
+
+    .linkedin-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 119, 181, 0.4);
+    }
+
+    /* Contact Portal Card */
+    .contact-portal-card {
+      background: linear-gradient(135deg, rgba(0, 198, 255, 0.1), rgba(0, 255, 217, 0.05));
+      border: 2px solid rgba(0, 255, 217, 0.2);
+      border-radius: 20px;
+      padding: 50px 40px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 8px 32px rgba(0, 255, 217, 0.15);
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    .contact-header {
+      margin-bottom: 35px;
+    }
+
+    .contact-header i {
+      font-size: 4rem;
+      color: #00ffd9;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .contact-header h3 {
+      font-size: 2rem;
+      color: #00ffd9;
+      margin-bottom: 15px;
+    }
+
+    .contact-header p {
+      color: #b0b0b0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .contact-portal-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      background: linear-gradient(135deg, #00ffd9, #00c6ff);
+      color: #000;
+      padding: 18px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(0, 255, 217, 0.3);
+    }
+
+    .contact-portal-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0, 255, 217, 0.5);
+    }
+
+    .contact-portal-btn i {
+      font-size: 1.3rem;
     }
 
     footer {
@@ -326,6 +517,28 @@
         margin: 0 auto 10px auto;
         background-color: transparent;
       }
+
+      .contact-portal-card {
+        padding: 35px 25px;
+      }
+
+      .contact-header h3 {
+        font-size: 1.5rem;
+      }
+
+      .contact-portal-btn {
+        font-size: 1rem;
+        padding: 15px 30px;
+      }
+
+      .social-links-card {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .social-btn {
+        justify-content: center;
+      }
     }
     
   </style>
@@ -348,6 +561,7 @@
     <nav>
       <a href="#about">About</a>
       <a href="#Experience">Experience</a>
+      <a href="#projects">Projects</a>
       <a href="#hackathons">Hackathons</a>
       <a href="#newsletter">Newsletter</a>
       <a href="#publications">Publications</a>
@@ -379,6 +593,17 @@
       Hi, I’m Monishwar Reddy Vardireddy, currently pursuing B.Tech at Woxsen University, specializing in Computer Science. I’m deeply passionate about the intersection of technology, research, and sustainability. Over the years, I’ve explored a wide range of domains such as data analysis, biomedical signal processing and EEG-based research. My work as a Research Assistant and Intern has allowed me to contribute to impactful projects like mathematical modelling, Monte Carlo simulations, and myocardial infarction detection.
       I've also contributed to global leadership and tech diplomacy through initiatives like TEDIS MUNs, which connects students worldwide to explore sustainable solutions through innovation and dialogue. I’m always eager to take on new challenges where I can apply my skills to real-world problems and drive meaningful impact.
     </div>
+    <div class="social-links-card">
+      <a href="mailto:monishwar26413@gmail.com" class="social-btn email-btn">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+      <a href="https://github.com/monishwar-reddy" target="_blank" class="social-btn github-btn">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/monishwar-reddy-vardireddy-b41991282/" target="_blank" class="social-btn linkedin-btn">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
   </section>
 
   <section id="Experience">
@@ -401,10 +626,14 @@
       </div>
       <div class="card">
         <img src="downloads-4.jpg" alt="TEDIS" class="tedis-img">
-        <strong>Founder – TEDIS Foundation</strong><br><br>
-        Global MUN Conferences on Diplomacy and Technology.<br>
-        <a href="https://www.linkedin.com/company/tedis-foundation/" target="_blank">LinkedIn</a><br>
-        <a href="https://www.instagram.com/tedis_foundation?igsh=MXhwdDZobXM3c2RqcA==" target="_blank">Instagram</a>
+        <strong>Founder – TEDIS Foundation</strong>
+        <p>Global MUN Conferences on Diplomacy and Technology.</p>
+        <a href="https://www.linkedin.com/company/tedis-foundation/" target="_blank" class="btn-link">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://www.instagram.com/tedis_foundation?igsh=MXhwdDZobXM3c2RqcA==" target="_blank" class="btn-link">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
       </div>
       <div class="card">
         <img src="downloads-5.jpg" alt="Tiaano">
@@ -419,11 +648,59 @@
     </div>
   </section>
 
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="ai-dashboard.png" alt="AI Interactive Dashboard">
+        <div class="card-content">
+          <strong>AI Interactive Dashboard</strong>
+          <p>AI Tutor is an educational web application demonstrating the power of AI-assisted learning. Users paste code, problems, or any text content and receive instant, step-by-step explanations powered by Google's Gemini AI model. The app simplifies complex topics into clear, structured, and easy-to-understand explanations which is deployed on Google Cloud Run.</p>
+          <a href="https://ai-interactive-dashboard-834196002468.asia-south1.run.app/" target="_blank" class="btn-link">
+            Try It Live <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="campusconnect.png" alt="CampusConnect">
+        <div class="card-content">
+          <strong>CampusConnect</strong>
+          <p>A comprehensive AI-powered platform that makes student life easier, smarter, and more fun. From AI moderation, auto-tagging, and summaries to a spooky dark UI, this is the ultimate campus community experience.</p>
+          <a href="https://kiroween-bulletin.netlify.app/" target="_blank" class="btn-link">
+            Visit Site <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="disaster-response.png" alt="AI Disaster Response Platform">
+        <div class="card-content">
+          <strong>AI Disaster Response Platform</strong>
+          <p>AI Disaster Response Platform is a smart, serverless web app that visualizes real-time environmental data such as temperature, humidity, and air quality. It uses Flask and Google Cloud Run, with AI-powered logic through Google AI Studio (Gemini API).</p>
+          <a href="https://ai-risk-dashboard-192565971483.asia-south1.run.app/" target="_blank" class="btn-link">
+            Visit Site <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="health-vault.png" alt="Cloud Health Record Vault">
+        <div class="card-content">
+          <strong>Cloud Health Record Vault</strong>
+          <p>Cloud Health Record Vault is a secure, cloud-based platform that enables patients to upload, store, and access their medical records anytime, anywhere. It solves the issue of scattered health data across hospitals, labs, and clinics by offering a unified, provider-agnostic vault with strong privacy and accessibility features.</p>
+          <a href="https://gorgeous-crostata-e51b2a.netlify.app/" target="_blank" class="btn-link">
+            Visit Site <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="newsletter">
     <h2>Newsletter</h2>
     <div class="card">
       <p>Stay updated with my latest work and thoughts!</p>
-      <a href="https://www.linkedin.com/newsletters/7280177177575223296/" target="_blank" class="newsletter-button">Follow My LinkedIn Newsletter</a>
+      <a href="https://www.linkedin.com/newsletters/7280177177575223296/" target="_blank" class="btn-link">
+        <i class="fab fa-linkedin"></i> Follow My LinkedIn Newsletter
+      </a>
     </div>
   </section>
   <section id="hackathons">
@@ -431,10 +708,20 @@
     <div class="card-grid">
       <div class="card">
         <img src="hackback.jpeg" alt="Hackathon 1">
-        <strong>Udhgam 2025 DigiTech Hackathon – 3st Prize</strong><br>
-        We built a Ticketing Platform to Help Small Event Organizers With Sales, Payments, and Check-Ins.
-        <a href="Hack-1.jpeg" target="_blank">View Certificate</a
-      </div>  
+        <strong>Udhgam 2025 DigiTech Hackathon – 3rd Prize</strong>
+        <p>We built a Ticketing Platform to Help Small Event Organizers With Sales, Payments, and Check-Ins.</p>
+        <a href="Hack-1.jpeg" target="_blank" class="btn-link">
+          <i class="fas fa-certificate"></i> View Certificate
+        </a>
+      </div>
+      <div class="card">
+        <img src="kiro-hackathon.png" alt="Code with Kiro Hackathon">
+        <strong>Code with Kiro Hackathon</strong>
+        <p>My project was "AI Tutor" - an educational web application that demonstrates the power of AI-assisted learning. It allows users to paste code, problems, or any text content, and instantly receive step-by-step explanations. The system breaks down complex concepts into easy, digestible insights, helping learners understand programming topics more effectively.</p>
+        <a href="https://devpost.com/software/ai-tutor-ai-learning-companion" target="_blank" class="btn-link">
+          <i class="fas fa-external-link-alt"></i> View Project
+        </a>
+      </div>
     </div>
   </section>
   <section id="publications">
@@ -442,15 +729,19 @@
     <div class="card-grid">
       <div class="card">
         <img src="plastic-paper.png" alt="Plastic Waste Pyrolysis">
-        <strong>Various Methods for Plastic Waste Pyrolysis to Fuels: A Review</strong><br>
-        <a href="https://journals.stmjournals.com/jopc/article=2025/view=215242/" target="_blank">View Paper</a><br>
-        Journal of Polymer and Composites, 2025.
+        <strong>Various Methods for Plastic Waste Pyrolysis to Fuels: A Review</strong>
+        <p>Journal of Polymer and Composites, 2025.</p>
+        <a href="https://journals.stmjournals.com/jopc/article=2025/view=215242/" target="_blank" class="btn-link">
+          <i class="fas fa-file-alt"></i> View Paper
+        </a>
       </div>
       <div class="card">
         <img src="eeg-neuromarketing.png" alt="EEG in Neuromarketing">
         <strong>Integrating EEG Analysis to Illuminate Consumer Behavior and Optimize Marketing Strategies</strong>
-        <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521" target="_blank">View Chapter</a><br>
-        IGI Global – Quantum AI Neuromarketing.
+        <p>IGI Global – Quantum AI Neuromarketing.</p>
+        <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521" target="_blank" class="btn-link">
+          <i class="fas fa-book"></i> View Chapter
+        </a>
       </div>
     </div>
   </section>
@@ -461,15 +752,27 @@
     <div class="card-grid">
       <div class="card">
         <img src="symmetry2024.png" alt="Symmetry Conference">
-        <strong>Symmetry2024 Conference</strong><br>
-        Presented Ecological Model Analysis.<br>
-        <a href="Symmetry 2024 certificate.pdf" target="_blank">View Certificate</a>
+        <strong>Symmetry2024 Conference</strong>
+        <p>Presented Ecological Model Analysis.</p>
+        <a href="Symmetry 2024 certificate.pdf" target="_blank" class="btn-link">
+          <i class="fas fa-certificate"></i> View Certificate
+        </a>
       </div>
       <div class="card">
         <img src="logo.png" alt="Chemflux Conference">
-        <strong>CHEMFLUX 11.0</strong><br>
-        Presented at SRM University.<br>
-        <a href="conference-2.png" target="_blank">View Certificate</a>
+        <strong>CHEMFLUX 11.0</strong>
+        <p>Presented at SRM University.</p>
+        <a href="conference-2.png" target="_blank" class="btn-link">
+          <i class="fas fa-certificate"></i> View Certificate
+        </a>
+      </div>
+      <div class="card">
+        <img src="unc-greensboro.png" alt="UNC Greensboro PDE Conference">
+        <strong>2025 UNC Greensboro Virtual PDE Conference</strong>
+        <p>Presented my research work on "Analysis of the SEIR Model around the Singularities"</p>
+        <a href="unc-greensboro-cert.png" target="_blank" class="btn-link">
+          <i class="fas fa-certificate"></i> View Certificate
+        </a>
       </div>
     </div>
 
@@ -477,49 +780,71 @@
     <div class="card-grid">
       <div class="card">
         <img src="GRS2025.png" alt="GRS I 2025">
-        <strong>Global Refugee Summit 2025</strong><br>
-        Represented the Philippines in the UNHCR Committee and received the Best Delegate award.<br>
-        <a href="GRS-2025-Cer.jpeg" target="_blank">View Certificate</a>
+        <strong>Global Refugee Summit 2025</strong>
+        <p>Represented the Philippines in the UNHCR Committee and received the Best Delegate award.</p>
+        <a href="GRS-2025-Cer.jpeg" target="_blank" class="btn-link">
+          <i class="fas fa-certificate"></i> View Certificate
+        </a>
       </div>
       <div class="card">
         <img src="UNGDS2024.png" alt="UNGDS2024">
-        <strong>United Nations Global Diplomatic Summit 2024</strong><br>
-        Represented Nigeria in the UNICEF Committee and received the Outstanding Delegate award.<br>
-        <a href="UNGDS2024cert.jpeg" target="_blank">View Certificate</a>
+        <strong>United Nations Global Diplomatic Summit 2024</strong>
+        <p>Represented Nigeria in the UNICEF Committee and received the Outstanding Delegate award.</p>
+        <a href="UNGDS2024cert.jpeg" target="_blank" class="btn-link">
+          <i class="fas fa-certificate"></i> View Certificate
+        </a>
       </div>
       <div class="card">
         <img src="HICMUN2024.png" alt="HICMUN2024">
-        <strong>HICMUN2024</strong><br>
-        Represented Gleeson Hedge in the Heroes of Olympus Committee and received an Honorable Mention.<br>
-        <a href="HICMUN2024cert.jpeg" target="_blank">View Certificate</a>
+        <strong>HICMUN2024</strong>
+        <p>Represented Gleeson Hedge in the Heroes of Olympus Committee and received an Honorable Mention.</p>
+        <a href="HICMUN2024cert.jpeg" target="_blank" class="btn-link">
+          <i class="fas fa-certificate"></i> View Certificate
+        </a>
       </div>
       <div class="card">
         <img src="GDS2025.png" alt="GDS2025">
-        <strong>Global Diplomat Summit Model United Nations 2025</strong><br>
-        Represented Brazil in the ECOFIN Committee and received the High Commendation Award and Best Position Paper Award.<br>
-        <a href="GDS2025cert-1.jpeg" target="_blank">View Certificate-1</a>
-        <a href="GDS2025cert-2.jpeg" target="_blank">View Certificate-2</a>
+        <strong>Global Diplomat Summit Model United Nations 2025</strong>
+        <p>Represented Brazil in the ECOFIN Committee and received the High Commendation Award and Best Position Paper Award.</p>
+        <a href="GDS2025cert-1.jpeg" target="_blank" class="btn-link">
+          <i class="fas fa-certificate"></i> Certificate 1
+        </a>
+        <a href="GDS2025cert-2.jpeg" target="_blank" class="btn-link">
+          <i class="fas fa-certificate"></i> Certificate 2
+        </a>
       </div>
       <div class="card">
         <img src="DLMUNCSIII.png" alt="DLMUNCSIII">
-        <strong>DLMUN Conference III 2025</strong><br>
-        Represented Switzerland in the WHO Committee.<br>
-        <a href="DLMUNCSIIIcert.jpeg" target="_blank">View Certificate</a>
+        <strong>DLMUN Conference III 2025</strong>
+        <p>Represented Switzerland in the WHO Committee.</p>
+        <a href="DLMUNCSIIIcert.jpeg" target="_blank" class="btn-link">
+          <i class="fas fa-certificate"></i> View Certificate
+        </a>
       </div>
       <div class="card">
         <img src="DMUNfoundation-1.png" alt="DLMUNCSIII">
-        <strong>DLMUN Conference III 2025</strong><br>
-        Represented the Netherlands in the UNSC Committee.<br>
-        <a href="DMUNCONFERENCECER.jpg" target="_blank">View Certificate</a>
+        <strong>DLMUN Conference III 2025</strong>
+        <p>Represented the Netherlands in the UNSC Committee.</p>
+        <a href="DMUNCONFERENCECER.jpg" target="_blank" class="btn-link">
+          <i class="fas fa-certificate"></i> View Certificate
+        </a>
       </div>
     </div>  
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: <a href="mailto:monishwar26413@gmail.com">monishwar26413@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/monishwar-reddy" target="_blank">https://github.com/monishwar-reddy</a></p>
+    <h2>Get In Touch</h2>
+    <div class="contact-portal-card">
+      <div class="contact-header">
+        <i class="fas fa-paper-plane"></i>
+        <h3>Let's Connect!</h3>
+        <p>Ready to discuss your project or just want to say hi? Click below to send me a message through my contact portal.</p>
+      </div>
+      <a href="contact.html" class="contact-portal-btn">
+        <i class="fas fa-envelope-open-text"></i>
+        Open Contact Portal
+        <i class="fas fa-arrow-right"></i>
+      </a>
     </div>
   </section>
   

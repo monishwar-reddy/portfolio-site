@@ -1,0 +1,319 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(to right, #0e0140, #004e92);
+      color: #f0f0f0;
+    }
+
+    header {
+      background: #0b0c10;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #00c6ff;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffd9;
+    }
+
+    .hero {
+      background: #6e6d6d; /* Fallback */
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      height: 100vh; /* Full viewport height */
+      width: 100vw; /* Full viewport width */
+      text-align: left;
+      position: relative;
+      padding: 40px 60px;
+      overflow: hidden;
+    }
+    .slideshow-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1; /* Set this to your preferred opacity */
+      z-index: 1;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 500px;
+      color: #fff;
+      z-index: 1;
+      text-align: absolute;
+    }
+
+    .hero-content h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 0.95rem;
+      margin: 5px 0;
+    }
+
+    .resume-button {
+      background: #00ffd9;
+      color: #000;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .resume-button:hover {
+      background: #0ff;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00ffd9;
+      margin-bottom: 40px;
+    }
+
+    .card, .card-grid .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 12px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      max-height: 300px; /* Fixed height */
+
+      object-fit: Cover;
+
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: None; 
+      padding: 0; /* Optional padding inside the white box */
+      display: block;
+      margin: 0 auto 10px auto;
+      
+    }
+    .tedis-img {
+      width: auto;
+      height: auto;
+       /* you can adjust this to make it bigger */
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 10px auto;
+      background-color: #fff; /* optional for logos */
+      padding: 8px;
+      border-radius: 10px;
+    }
+
+    #publications .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 5px;
+    }
+
+    #publications .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 8px 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+      margin-bottom: 5px;
+      width: 100%;
+    }
+
+    #publications .card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: transparent;
+    }
+
+    #conferences .card img {
+      height: auto !important;
+      max-height: 200px !important;
+      object-fit: contain !important;
+      background-color: #fff;
+    }
+    #hackathons .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    #hackathons .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 12px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s;
+      margin-bottom: 25px;
+      max-width: 300px;                   /* Set max width for uniformity */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #hackathons .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #00ffd9;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 6px;
+      color: #00ffd9;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+      color: #00c6ff;
+    }
+    #newsletter .card {
+      text-align: center;
+    }
+
+    .newsletter-button {
+      color: #00ffd9;
+      padding: 12px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    footer {
+      background: #0b0c10;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    section:not(.visible) {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .tedis-img {
+        height: 100px;
+        width: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto 10px auto;
+        background-color: transparent;
+      }
+    }

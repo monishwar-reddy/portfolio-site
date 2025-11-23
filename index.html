@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V. Monishwar Reddy  | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(to right, #0e0140, #004e92);
+      color: #f0f0f0;
+    }
+
+    header {
+      background: #0b0c10;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #00c6ff;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffd9;
+    }
+
+    .hero {
+      background: #6e6d6d; /* Fallback */
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      height: 100vh; /* Full viewport height */
+      width: 100vw; /* Full viewport width */
+      text-align: left;
+      position: relative;
+      padding: 40px 60px;
+      overflow: hidden;
+    }
+    .slideshow-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1; /* Set this to your preferred opacity */
+      z-index: 1;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 500px;
+      color: #fff;
+      z-index: 1;
+      text-align: absolute;
+    }
+
+    .hero-content h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 0.95rem;
+      margin: 5px 0;
+    }
+
+    .resume-button {
+      background: #00ffd9;
+      color: #000;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .resume-button:hover {
+      background: #0ff;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00ffd9;
+      margin-bottom: 40px;
+    }
+
+    .card, .card-grid .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 12px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      max-height: 300px; /* Fixed height */
+
+      object-fit: Cover;
+
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: None; 
+      padding: 0; /* Optional padding inside the white box */
+      display: block;
+      margin: 0 auto 10px auto;
+      
+    }
+    .tedis-img {
+      width: auto;
+      height: auto;
+       /* you can adjust this to make it bigger */
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 10px auto;
+      background-color: #fff; /* optional for logos */
+      padding: 8px;
+      border-radius: 10px;
+    }
+
+    #publications .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 5px;
+    }
+
+    #publications .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 8px 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+      margin-bottom: 5px;
+      width: 100%;
+    }
+
+    #publications .card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: transparent;
+    }
+
+    #conferences .card img {
+      height: auto !important;
+      max-height: 200px !important;
+      object-fit: contain !important;
+      background-color: #fff;
+    }
+    #hackathons .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    #hackathons .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 12px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s;
+      margin-bottom: 25px;
+      max-width: 300px;                   /* Set max width for uniformity */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #hackathons .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #00ffd9;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 6px;
+      color: #00ffd9;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+      color: #00c6ff;
+    }
+    #newsletter .card {
+      text-align: center;
+    }
+
+    .newsletter-button {
+      background-color: #000011;
+      color: #00ffd9;
+      padding: 12px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    footer {
+      background: #0b0c10;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    section:not(.visible) {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .tedis-img {
+        height: 100px;
+        width: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto 10px auto;
+        background-color: transparent;
+      }
+    }
+    
+  </style>
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('section').forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        const threshold = window.innerHeight * 0.85;
+        if (top < threshold) {
+          section.classList.add('visible');
+        }
+      });
+    });
+
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Monishwar Reddy</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#Experience">Experience</a>
+      <a href="#hackathons">Hackathons</a>
+      <a href="#newsletter">Newsletter</a>
+      <a href="#publications">Publications</a>
+      <a href="#conferences">Conferences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="slideshow-container">
+    <img class="slide" src="monishwar-1.jpg" alt="Slide 1" />
+    <img class="slide" src="monishwares-2.jpeg" alt="Slide 2" />
+    <img class="slide" src="monishwar-3.jpeg" alt="Slide 3" />
+    <img class="slide" src="monishwar-4.jpeg" alt="Slide 4" />
+    <img class="slide" src="monishwar-5.jpeg" alt="Slide 5" />
+    <img class="slide" src="monishwar-6.jpeg" alt="Slide 6" />
+    </div>
+    <div class="hero-content">
+      <h1>Monishwar Reddy Vardireddy</h1>
+      <p>Student, Woxsen University</p>
+      <a href="Resume (2).pdf" class="resume-button" download>Download My Resume</a>
+    </div>
+
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      Hi, I’m Monishwar Reddy Vardireddy, currently pursuing B.Tech at Woxsen University, specializing in Computer Science. I’m deeply passionate about the intersection of technology, research, and sustainability. Over the years, I’ve explored a wide range of domains such as data analysis, biomedical signal processing and EEG-based research. My work as a Research Assistant and Intern has allowed me to contribute to impactful projects like mathematical modelling, Monte Carlo simulations, and myocardial infarction detection.
+      I've also contributed to global leadership and tech diplomacy through initiatives like TEDIS MUNs, which connects students worldwide to explore sustainable solutions through innovation and dialogue. I’m always eager to take on new challenges where I can apply my skills to real-world problems and drive meaningful impact.
+    </div>
+  </section>
+
+  <section id="Experience">
+    <h2>Experience</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="downloads-1.jpg" alt="RA" class="tedis-img">
+        <strong>Research Assistant – Woxsen University</strong><br>
+        SEIR, Monte Carlo model Analysis.
+      </div>
+      <div class="card">
+        <img src="dowmload-2.jpeg" alt="Intern" class="fix-bg">
+        <strong>Research Intern – Woxsen University</strong><br>
+        EEG/HMI Research and Publications.
+      </div>
+      <div class="card">
+        <img src="downloads-3.jpg" alt="HCL" class="fix-bg">
+        <strong>Biomedical Signal Processing Intern – HCL Tech</strong><br>
+        Myocardial Infarction Detection .
+      </div>
+      <div class="card">
+        <img src="downloads-4.jpg" alt="TEDIS" class="tedis-img">
+        <strong>Founder – TEDIS Foundation</strong><br><br>
+        Global MUN Conferences on Diplomacy and Technology.<br>
+        <a href="https://www.linkedin.com/company/tedis-foundation/" target="_blank">LinkedIn</a><br>
+        <a href="https://www.instagram.com/tedis_foundation?igsh=MXhwdDZobXM3c2RqcA==" target="_blank">Instagram</a>
+      </div>
+      <div class="card">
+        <img src="downloads-5.jpg" alt="Tiaano">
+        <strong>R&D Analyst Intern – Tiaano</strong><br>
+        Innovation & Insights analysis.
+      </div>
+      <div class="card">
+        <img src="downloads-6.jpg" alt="DA">
+        <strong>Data Analyst Intern – Woxsen University</strong><br>
+        Social Media Analytics & Visualization.
+      </div>
+    </div>
+  </section>
+
+  <section id="newsletter">
+    <h2>Newsletter</h2>
+    <div class="card">
+      <p>Stay updated with my latest work and thoughts!</p>
+      <a href="https://www.linkedin.com/newsletters/7280177177575223296/" target="_blank" class="newsletter-button">Follow My LinkedIn Newsletter</a>
+    </div>
+  </section>
+  <section id="hackathons">
+    <h2>Hackathons</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="hackback.jpeg" alt="Hackathon 1">
+        <strong>Udhgam 2025 DigiTech Hackathon – 3st Prize</strong><br>
+        We built a Ticketing Platform to Help Small Event Organizers With Sales, Payments, and Check-Ins.
+        <a href="Hack-1.jpeg" target="_blank">View Certificate</a
+      </div>  
+    </div>
+  </section>
+  <section id="publications">
+    <h2>Publications</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="plastic-paper.png" alt="Plastic Waste Pyrolysis">
+        <strong>Various Methods for Plastic Waste Pyrolysis to Fuels: A Review</strong><br>
+        <a href="https://journals.stmjournals.com/jopc/article=2025/view=215242/" target="_blank">View Paper</a><br>
+        Journal of Polymer and Composites, 2025.
+      </div>
+      <div class="card">
+        <img src="eeg-neuromarketing.png" alt="EEG in Neuromarketing">
+        <strong>Integrating EEG Analysis to Illuminate Consumer Behavior and Optimize Marketing Strategies</strong>
+        <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521" target="_blank">View Chapter</a><br>
+        IGI Global – Quantum AI Neuromarketing.
+      </div>
+    </div>
+  </section>
+
+  <section id="conferences">
+    <h2>Conferences</h2>
+    <h3 style="text-align:center; color:#00ffd9; margin-top:30px;">Research Conferences</h3>
+    <div class="card-grid">
+      <div class="card">
+        <img src="symmetry2024.png" alt="Symmetry Conference">
+        <strong>Symmetry2024 Conference</strong><br>
+        Presented Ecological Model Analysis.<br>
+        <a href="Symmetry 2024 certificate.pdf" target="_blank">View Certificate</a>
+      </div>
+      <div class="card">
+        <img src="logo.png" alt="Chemflux Conference">
+        <strong>CHEMFLUX 11.0</strong><br>
+        Presented at SRM University.<br>
+        <a href="conference-2.png" target="_blank">View Certificate</a>
+      </div>
+    </div>
+
+    <h3 style="text-align:center; color:#00ffd9; margin-top:30px;">MUN Conferences</h3>
+    <div class="card-grid">
+      <div class="card">
+        <img src="GRS2025.png" alt="GRS I 2025">
+        <strong>Global Refugee Summit 2025</strong><br>
+        Represented the Philippines in the UNHCR Committee and received the Best Delegate award.<br>
+        <a href="GRS-2025-Cer.jpeg" target="_blank">View Certificate</a>
+      </div>
+      <div class="card">
+        <img src="UNGDS2024.png" alt="UNGDS2024">
+        <strong>United Nations Global Diplomatic Summit 2024</strong><br>
+        Represented Nigeria in the UNICEF Committee and received the Outstanding Delegate award.<br>
+        <a href="UNGDS2024cert.jpeg" target="_blank">View Certificate</a>
+      </div>
+      <div class="card">
+        <img src="HICMUN2024.png" alt="HICMUN2024">
+        <strong>HICMUN2024</strong><br>
+        Represented Gleeson Hedge in the Heroes of Olympus Committee and received an Honorable Mention.<br>
+        <a href="HICMUN2024cert.jpeg" target="_blank">View Certificate</a>
+      </div>
+      <div class="card">
+        <img src="GDS2025.png" alt="GDS2025">
+        <strong>Global Diplomat Summit Model United Nations 2025</strong><br>
+        Represented Brazil in the ECOFIN Committee and received the High Commendation Award and Best Position Paper Award.<br>
+        <a href="GDS2025cert-1.jpeg" target="_blank">View Certificate-1</a>
+        <a href="GDS2025cert-2.jpeg" target="_blank">View Certificate-2</a>
+      </div>
+      <div class="card">
+        <img src="DLMUNCSIII.png" alt="DLMUNCSIII">
+        <strong>DLMUN Conference III 2025</strong><br>
+        Represented Switzerland in the WHO Committee.<br>
+        <a href="DLMUNCSIIIcert.jpeg" target="_blank">View Certificate</a>
+      </div>
+      <div class="card">
+        <img src="DMUNfoundation-1.png" alt="DLMUNCSIII">
+        <strong>DLMUN Conference III 2025</strong><br>
+        Represented the Netherlands in the UNSC Committee.<br>
+        <a href="DMUNCONFERENCECER.jpg" target="_blank">View Certificate</a>
+      </div>
+    </div>  
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:monishwar26413@gmail.com">monishwar26413@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/monishwar-reddy" target="_blank">https://github.com/monishwar-reddy</a></p>
+    </div>
+  </section>
+  
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlides() {
+      slides.forEach((slide, index) => {
+        slide.classList.remove("active");
+      });
+
+      slides[slideIndex].classList.add("active");
+      slideIndex = (slideIndex + 1) % slides.length;
+    }
+
+    showSlides(); // Show the first one immediately
+    setInterval(showSlides, 4000); // Change every 4s
+  </script>
+
+</body>
+</html> 

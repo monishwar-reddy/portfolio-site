@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me | Monishwar Reddy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #0e0140, #004e92);
+      color: #f0f0f0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #00ffd9;
+      padding: 12px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 255, 217, 0.3);
+    }
+
+    .back-btn:hover {
+      background: rgba(0, 255, 217, 0.2);
+      transform: translateX(-5px);
+    }
+
+    .contact-container {
+      background: linear-gradient(135deg, rgba(0, 198, 255, 0.1), rgba(0, 255, 217, 0.05));
+      border: 2px solid rgba(0, 255, 217, 0.2);
+      border-radius: 20px;
+      padding: 50px 40px;
+      max-width: 700px;
+      width: 100%;
+      box-shadow: 0 8px 32px rgba(0, 255, 217, 0.15);
+      backdrop-filter: blur(10px);
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .contact-header i {
+      font-size: 4rem;
+      color: #00ffd9;
+      margin-bottom: 20px;
+    }
+
+    .contact-header h1 {
+      font-size: 2.5rem;
+      color: #00ffd9;
+      margin-bottom: 15px;
+    }
+
+    .contact-header p {
+      color: #b0b0b0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      color: #00ffd9;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .form-group label i {
+      margin-right: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(0, 255, 217, 0.3);
+      border-radius: 12px;
+      padding: 15px 18px;
+      color: #f0f0f0;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #00ffd9;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 20px rgba(0, 255, 217, 0.3);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #888;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #00ffd9, #00c6ff);
+      color: #000;
+      border: none;
+      padding: 18px 35px;
+      border-radius: 35px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 255, 217, 0.5);
+    }
+
+    .submit-btn i {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        padding: 35px 25px;
+      }
+
+      .contact-header h1 {
+        font-size: 2rem;
+      }
+
+      .back-btn {
+        top: 10px;
+        left: 10px;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-btn">
+    <i class="fas fa-arrow-left"></i> Back to Portfolio
+  </a>
+
+  <div class="contact-container">
+    <div class="contact-header">
+      <i class="fas fa-envelope-open-text"></i>
+      <h1>Send Me a Message</h1>
+      <p>Have a question or want to work together? Fill out the form below and I'll get back to you as soon as possible!</p>
+    </div>
+
+    <form action="https://formspree.io/f/movbywqa" method="POST" class="contact-form">
+      <div class="form-group">
+        <label for="name"><i class="fas fa-user"></i> Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="John Doe">
+      </div>
+
+      <div class="form-group">
+        <label for="email"><i class="fas fa-envelope"></i> Your Email</label>
+        <input type="email" id="email" name="email" required placeholder="john@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+        <input type="text" id="subject" name="subject" required placeholder="Project Inquiry">
+      </div>
+
+      <div class="form-group">
+        <label for="message"><i class="fas fa-comment-dots"></i> Message</label>
+        <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project or question..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+    </form>
+  </div>
+</body>
+</html>

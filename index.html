@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V. Monishwar Reddy  | Portfolio</title>
+  <title>V. Monishwar Reddy | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -50,17 +51,25 @@
     }
 
     .hero {
-      background: #6e6d6d; /* Fallback */
+      background: #6e6d6d;
+      /* Fallback */
       display: flex;
       align-items: flex-end;
       justify-content: flex-start;
-      height: 100vh; /* Full viewport height */
-      width: 100vw; /* Full viewport width */
+      height: 100vh;
+      /* Full viewport height */
+      width: 100vw;
+      /* Full viewport width */
+      max-width: 100%;
+      /* Override section max-width */
+      margin: 0;
+      /* Override section margin */
       text-align: left;
       position: relative;
       padding: 40px 60px;
       overflow: hidden;
     }
+
     .slideshow-container {
       position: absolute;
       top: 0;
@@ -71,6 +80,13 @@
       overflow: hidden;
     }
 
+    .slide.fit-full {
+      object-fit: contain !important;
+      object-position: center center !important;
+      background-color: #e6e2dd;
+      /* Matching beige background for seamless look */
+    }
+
     .slide {
       position: absolute;
       top: 0;
@@ -79,12 +95,14 @@
       height: 100%;
 
       object-fit: cover;
+      object-position: center center;
       opacity: 0;
       transition: opacity 1s ease-in-out;
     }
 
     .slide.active {
-      opacity: 1; /* Set this to your preferred opacity */
+      opacity: 1;
+      /* Set this to your preferred opacity */
       z-index: 1;
     }
 
@@ -92,31 +110,37 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.4);
     }
 
     .hero-content {
       position: relative;
-      max-width: 500px;
+      max-width: 800px;
       color: #fff;
       z-index: 1;
-      text-align: absolute;
+      text-align: left;
     }
 
     .hero-content h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
+      font-size: 4rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-weight: 800;
+      line-height: 1.1;
     }
 
     .hero-content p {
-      font-size: 0.95rem;
-      margin: 5px 0;
+      font-size: 1.5rem;
+      margin: 10px 0 25px 0;
+      font-weight: 500;
+      color: #ddd;
     }
 
     .resume-button {
       background: #00ffd9;
       color: #000;
-      padding: 12px 28px;
+      padding: 16px 36px;
+
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
@@ -141,11 +165,12 @@
       margin-bottom: 40px;
     }
 
-    .card, .card-grid .card {
+    .card,
+    .card-grid .card {
       background: rgba(255, 255, 255, 0.05);
       padding: 10px 12px;
       border-radius: 14px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
       margin-bottom: 20px;
       transition: transform 0.3s;
     }
@@ -163,26 +188,30 @@
     .card img {
       width: 100%;
       height: auto;
-      max-height: 300px; /* Fixed height */
+      max-height: 300px;
+      /* Fixed height */
 
       object-fit: Cover;
 
       border-radius: 10px;
       margin-bottom: 10px;
-      background: None; 
-      padding: 0; /* Optional padding inside the white box */
+      background: None;
+      padding: 0;
+      /* Optional padding inside the white box */
       display: block;
       margin: 0 auto 10px auto;
-      
+
     }
+
     .tedis-img {
       width: auto;
       height: auto;
-       /* you can adjust this to make it bigger */
+      /* you can adjust this to make it bigger */
       object-fit: contain;
       display: block;
       margin: 0 auto 10px auto;
-      background-color: #fff; /* optional for logos */
+      background-color: #fff;
+      /* optional for logos */
       padding: 8px;
       border-radius: 10px;
     }
@@ -229,6 +258,7 @@
       object-fit: contain !important;
       background-color: #fff;
     }
+
     #hackathons .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -242,7 +272,8 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
       transition: transform 0.3s;
       margin-bottom: 25px;
-      max-width: 300px;                   /* Set max width for uniformity */
+      max-width: 300px;
+      /* Set max width for uniformity */
       margin-left: auto;
       margin-right: auto;
     }
@@ -256,6 +287,7 @@
       background-color: rgba(255, 255, 255, 0.05);
       padding: 10px;
     }
+
     .card strong {
       display: block;
       margin-bottom: 10px;
@@ -336,6 +368,7 @@
       margin: 10px 0;
       line-height: 1.6;
     }
+
     #newsletter .card {
       text-align: center;
     }
@@ -509,6 +542,7 @@
       .card-grid {
         grid-template-columns: 1fr;
       }
+
       .tedis-img {
         height: 100px;
         width: auto;
@@ -540,7 +574,6 @@
         justify-content: center;
       }
     }
-    
   </style>
   <script>
     window.addEventListener('scroll', () => {
@@ -555,6 +588,7 @@
 
   </script>
 </head>
+
 <body>
   <header>
     <h1>Monishwar Reddy</h1>
@@ -572,17 +606,15 @@
 
   <section class="hero">
     <div class="slideshow-container">
-    <img class="slide" src="monishwar-1.jpg" alt="Slide 1" />
-    <img class="slide" src="monishwares-2.jpeg" alt="Slide 2" />
-    <img class="slide" src="monishwar-3.jpeg" alt="Slide 3" />
-    <img class="slide" src="monishwar-4.jpeg" alt="Slide 4" />
-    <img class="slide" src="monishwar-5.jpeg" alt="Slide 5" />
-    <img class="slide" src="monishwar-6.jpeg" alt="Slide 6" />
+      <img class="slide fit-full" src="monishwar-1.jpeg" alt="Slide 1" />
+      <img class="slide" src="monishwar-2.png" alt="Slide 2" />
+      <img class="slide" src="monishwar-4.jpeg" alt="Slide 4" />
+      <img class="slide" src="monishwar-5.jpeg" alt="Slide 5" />
     </div>
     <div class="hero-content">
       <h1>Monishwar Reddy Vardireddy</h1>
       <p>Student, Woxsen University</p>
-      <a href="Resume (2).pdf" class="resume-button" download>Download My Resume</a>
+      <a href="Monishwar_Reddy_Resume.pdf" class="resume-button" download>About Me</a>
     </div>
 
   </section>
@@ -590,8 +622,14 @@
   <section id="about">
     <h2>About Me</h2>
     <div class="card">
-      Hi, I’m Monishwar Reddy Vardireddy, currently pursuing B.Tech at Woxsen University, specializing in Computer Science. I’m deeply passionate about the intersection of technology, research, and sustainability. Over the years, I’ve explored a wide range of domains such as data analysis, biomedical signal processing and EEG-based research. My work as a Research Assistant and Intern has allowed me to contribute to impactful projects like mathematical modelling, Monte Carlo simulations, and myocardial infarction detection.
-      I've also contributed to global leadership and tech diplomacy through initiatives like TEDIS MUNs, which connects students worldwide to explore sustainable solutions through innovation and dialogue. I’m always eager to take on new challenges where I can apply my skills to real-world problems and drive meaningful impact.
+      Hi, I’m Monishwar Reddy Vardireddy, currently pursuing B.Tech at Woxsen University, specializing in Computer
+      Science. I’m deeply passionate about the intersection of technology, research, and sustainability. Over the years,
+      I’ve explored a wide range of domains such as data analysis, biomedical signal processing and EEG-based research.
+      My work as a Research Assistant and Intern has allowed me to contribute to impactful projects like mathematical
+      modelling, Monte Carlo simulations, and myocardial infarction detection.
+      I've also contributed to global leadership and tech diplomacy through initiatives like TEDIS MUNs, which connects
+      students worldwide to explore sustainable solutions through innovation and dialogue. I’m always eager to take on
+      new challenges where I can apply my skills to real-world problems and drive meaningful impact.
     </div>
     <div class="social-links-card">
       <a href="mailto:monishwar26413@gmail.com" class="social-btn email-btn">
@@ -600,7 +638,8 @@
       <a href="https://github.com/monishwar-reddy" target="_blank" class="social-btn github-btn">
         <i class="fab fa-github"></i> GitHub
       </a>
-      <a href="https://www.linkedin.com/in/monishwar-reddy-vardireddy-b41991282/" target="_blank" class="social-btn linkedin-btn">
+      <a href="https://www.linkedin.com/in/monishwar-reddy-vardireddy-b41991282/" target="_blank"
+        class="social-btn linkedin-btn">
         <i class="fab fa-linkedin"></i> LinkedIn
       </a>
     </div>
@@ -655,7 +694,10 @@
         <img src="ai-dashboard.png" alt="AI Interactive Dashboard">
         <div class="card-content">
           <strong>AI Interactive Dashboard</strong>
-          <p>AI Tutor is an educational web application demonstrating the power of AI-assisted learning. Users paste code, problems, or any text content and receive instant, step-by-step explanations powered by Google's Gemini AI model. The app simplifies complex topics into clear, structured, and easy-to-understand explanations which is deployed on Google Cloud Run.</p>
+          <p>AI Tutor is an educational web application demonstrating the power of AI-assisted learning. Users paste
+            code, problems, or any text content and receive instant, step-by-step explanations powered by Google's
+            Gemini AI model. The app simplifies complex topics into clear, structured, and easy-to-understand
+            explanations which is deployed on Google Cloud Run.</p>
           <a href="https://ai-interactive-dashboard-834196002468.asia-south1.run.app/" target="_blank" class="btn-link">
             Try It Live <i class="fas fa-external-link-alt"></i>
           </a>
@@ -665,7 +707,9 @@
         <img src="campusconnect.png" alt="CampusConnect">
         <div class="card-content">
           <strong>CampusConnect</strong>
-          <p>A comprehensive AI-powered platform that makes student life easier, smarter, and more fun. From AI moderation, auto-tagging, and summaries to a spooky dark UI, this is the ultimate campus community experience.</p>
+          <p>A comprehensive AI-powered platform that makes student life easier, smarter, and more fun. From AI
+            moderation, auto-tagging, and summaries to a spooky dark UI, this is the ultimate campus community
+            experience.</p>
           <a href="https://kiroween-bulletin.netlify.app/" target="_blank" class="btn-link">
             Visit Site <i class="fas fa-external-link-alt"></i>
           </a>
@@ -675,7 +719,9 @@
         <img src="disaster-response.png" alt="AI Disaster Response Platform">
         <div class="card-content">
           <strong>AI Disaster Response Platform</strong>
-          <p>AI Disaster Response Platform is a smart, serverless web app that visualizes real-time environmental data such as temperature, humidity, and air quality. It uses Flask and Google Cloud Run, with AI-powered logic through Google AI Studio (Gemini API).</p>
+          <p>AI Disaster Response Platform is a smart, serverless web app that visualizes real-time environmental data
+            such as temperature, humidity, and air quality. It uses Flask and Google Cloud Run, with AI-powered logic
+            through Google AI Studio (Gemini API).</p>
           <a href="https://ai-risk-dashboard-192565971483.asia-south1.run.app/" target="_blank" class="btn-link">
             Visit Site <i class="fas fa-external-link-alt"></i>
           </a>
@@ -685,7 +731,10 @@
         <img src="health-vault.png" alt="Cloud Health Record Vault">
         <div class="card-content">
           <strong>Cloud Health Record Vault</strong>
-          <p>Cloud Health Record Vault is a secure, cloud-based platform that enables patients to upload, store, and access their medical records anytime, anywhere. It solves the issue of scattered health data across hospitals, labs, and clinics by offering a unified, provider-agnostic vault with strong privacy and accessibility features.</p>
+          <p>Cloud Health Record Vault is a secure, cloud-based platform that enables patients to upload, store, and
+            access their medical records anytime, anywhere. It solves the issue of scattered health data across
+            hospitals, labs, and clinics by offering a unified, provider-agnostic vault with strong privacy and
+            accessibility features.</p>
           <a href="https://gorgeous-crostata-e51b2a.netlify.app/" target="_blank" class="btn-link">
             Visit Site <i class="fas fa-external-link-alt"></i>
           </a>
@@ -717,9 +766,18 @@
       <div class="card">
         <img src="kiro-hackathon.png" alt="Code with Kiro Hackathon">
         <strong>Code with Kiro Hackathon</strong>
-        <p>My project was "AI Tutor" - an educational web application that demonstrates the power of AI-assisted learning. It allows users to paste code, problems, or any text content, and instantly receive step-by-step explanations. The system breaks down complex concepts into easy, digestible insights, helping learners understand programming topics more effectively.</p>
+        <p>My project was "AI Tutor" an educational web application that demonstrates the power of AI-assisted learning.
+        </p>
         <a href="https://devpost.com/software/ai-tutor-ai-learning-companion" target="_blank" class="btn-link">
           <i class="fas fa-external-link-alt"></i> View Project
+        </a>
+      </div>
+      <div class="card">
+        <img src="Agentathon-hackathon.png" alt="AGENTATHON 2025">
+        <strong>AGENTATHON 2025</strong>
+        <p>We built Campus Connect, a platform designed to help students connect and interact seamlessly</p>
+        <a href="Agentathon-Certificate.png" target="_blank" class="btn-link">
+          <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
     </div>
@@ -739,7 +797,8 @@
         <img src="eeg-neuromarketing.png" alt="EEG in Neuromarketing">
         <strong>Integrating EEG Analysis to Illuminate Consumer Behavior and Optimize Marketing Strategies</strong>
         <p>IGI Global – Quantum AI Neuromarketing.</p>
-        <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521" target="_blank" class="btn-link">
+        <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521"
+          target="_blank" class="btn-link">
           <i class="fas fa-book"></i> View Chapter
         </a>
       </div>
@@ -762,7 +821,7 @@
         <img src="logo.png" alt="Chemflux Conference">
         <strong>CHEMFLUX 11.0</strong>
         <p>Presented at SRM University.</p>
-        <a href="conference-2.png" target="_blank" class="btn-link">
+        <a href="conference-2.jpg" target="_blank" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
@@ -805,7 +864,8 @@
       <div class="card">
         <img src="GDS2025.png" alt="GDS2025">
         <strong>Global Diplomat Summit Model United Nations 2025</strong>
-        <p>Represented Brazil in the ECOFIN Committee and received the High Commendation Award and Best Position Paper Award.</p>
+        <p>Represented Brazil in the ECOFIN Committee and received the High Commendation Award and Best Position Paper
+          Award.</p>
         <a href="GDS2025cert-1.jpeg" target="_blank" class="btn-link">
           <i class="fas fa-certificate"></i> Certificate 1
         </a>
@@ -829,7 +889,7 @@
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
-    </div>  
+    </div>
   </section>
 
   <section id="contact">
@@ -838,7 +898,8 @@
       <div class="contact-header">
         <i class="fas fa-paper-plane"></i>
         <h3>Let's Connect!</h3>
-        <p>Ready to discuss your project or just want to say hi? Click below to send me a message through my contact portal.</p>
+        <p>Ready to discuss your project or just want to say hi? Click below to send me a message through my contact
+          portal.</p>
       </div>
       <a href="contact.html" class="contact-portal-btn">
         <i class="fas fa-envelope-open-text"></i>
@@ -847,7 +908,7 @@
       </a>
     </div>
   </section>
-  
+
   <script>
     let slideIndex = 0;
     const slides = document.querySelectorAll(".slide");
@@ -866,4 +927,5 @@
   </script>
 
 </body>
-</html> 
+
+</html>

@@ -4,26 +4,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V. Monishwar Reddy | Portfolio</title>
+  <title>V. Monishwar Reddy | Researcher, Engineer & Innovator</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-cream-main: #fbf8f3;
+      --bg-card: #ffffff;
+      --text-primary: #1e1813;
+      --text-secondary: #574e44;
+      --text-muted: #84796e;
+      --accent-teal: #0d9488;
+      --accent-teal-dark: #0f766e;
+      --card-border: rgba(214, 201, 186, 0.65);
+      --card-border-hover: rgba(13, 148, 136, 0.4);
+      --card-shadow: 0 4px 18px rgba(66, 48, 30, 0.05);
+      --card-shadow-hover: 0 14px 30px rgba(66, 48, 30, 0.12);
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       scroll-behavior: smooth;
     }
 
     body {
-      background: linear-gradient(to right, #0e0140, #004e92);
-      color: #f0f0f0;
+      background-color: var(--bg-cream-main);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      position: relative;
+      /* Soft flowing warm shading background */
+      background: linear-gradient(180deg, 
+        #fbf8f3 0%, 
+        #f7f0e3 20%, 
+        #f3e9d8 45%, 
+        #f8f2e7 70%, 
+        #fbf8f3 100%
+      );
+      background-attachment: fixed;
     }
 
+    /* Ambient Floating Gradient Orbs */
+    .ambient-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(90px);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      animation: floatOrb 25s infinite alternate ease-in-out;
+    }
+
+    .ambient-orb-1 {
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, #e9cfb5, #f5dfca);
+      top: -80px;
+      left: -100px;
+      animation-duration: 26s;
+    }
+
+    .ambient-orb-2 {
+      width: 540px;
+      height: 540px;
+      background: radial-gradient(circle, #d0e7e2, #e5f4f0);
+      top: 40%;
+      right: -150px;
+      animation-duration: 32s;
+      animation-delay: -8s;
+    }
+
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(45px, 60px) scale(1.08); }
+      100% { transform: translate(-25px, 30px) scale(0.95); }
+    }
+
+    /* Top Bar - Dark with no dot on name */
     header {
-      background: #0b0c10;
-      padding: 20px 40px;
+      background: #0d0c11;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 18px 50px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -31,43 +97,56 @@
       position: sticky;
       top: 0;
       z-index: 999;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35);
+      transition: all 0.3s ease;
     }
 
     header h1 {
-      font-size: 2rem;
-      color: #00c6ff;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     nav a {
-      color: #fff;
-      margin: 0 15px;
+      color: #e5ded7;
+      padding: 8px 14px;
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
+      font-weight: 600;
+      font-size: 0.92rem;
+      border-radius: 20px;
+      transition: all 0.25s ease;
+      position: relative;
     }
 
     nav a:hover {
       color: #00ffd9;
+      background: rgba(0, 255, 217, 0.1);
     }
 
+    /* Hero Container - Always 100% visible, never blank */
     .hero {
-      background: #6e6d6d;
-      /* Fallback */
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      max-width: 100%;
+      margin: 0;
       display: flex;
       align-items: flex-end;
       justify-content: flex-start;
-      height: 100vh;
-      /* Full viewport height */
-      width: 100vw;
-      /* Full viewport width */
-      max-width: 100%;
-      /* Override section max-width */
-      margin: 0;
-      /* Override section margin */
-      text-align: left;
-      position: relative;
-      padding: 40px 60px;
+      padding: 60px 80px;
       overflow: hidden;
+      background-color: #e6e2dd;
+      opacity: 1 !important;
+      transform: none !important;
     }
 
     .slideshow-container {
@@ -80,29 +159,26 @@
       overflow: hidden;
     }
 
-    .slide.fit-full {
-      object-fit: contain !important;
-      object-position: center center !important;
-      background-color: #e6e2dd;
-      /* Matching beige background for seamless look */
-    }
-
     .slide {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-
       object-fit: cover;
       object-position: center center;
       opacity: 0;
-      transition: opacity 1s ease-in-out;
+      transition: opacity 1.4s ease-in-out;
+    }
+
+    .slide.fit-full {
+      object-fit: contain !important;
+      object-position: center center !important;
+      background-color: #e6e2dd;
     }
 
     .slide.active {
       opacity: 1;
-      /* Set this to your preferred opacity */
       z-index: 1;
     }
 
@@ -110,236 +186,456 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.4);
+      background: linear-gradient(180deg, rgba(16, 13, 10, 0.2) 0%, rgba(16, 13, 10, 0.68) 100%);
+      z-index: 2;
     }
 
     .hero-content {
       position: relative;
-      max-width: 800px;
-      color: #fff;
-      z-index: 1;
+      max-width: 880px;
+      color: #ffffff;
+      z-index: 3;
       text-align: left;
     }
 
     .hero-content h1 {
-      font-size: 4rem;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      font-weight: 800;
+      font-family: 'Playfair Display', serif;
+      font-size: 4.2rem;
+      margin-bottom: 15px;
+      font-weight: 700;
       line-height: 1.1;
+      letter-spacing: -1px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     }
 
     .hero-content p {
-      font-size: 1.5rem;
-      margin: 10px 0 25px 0;
-      font-weight: 500;
-      color: #ddd;
+      font-size: 1.45rem;
+      margin: 10px 0 30px 0;
+      font-weight: 400;
+      color: #f3ede2;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      max-width: 650px;
     }
 
     .resume-button {
-      background: #00ffd9;
-      color: #000;
-      padding: 16px 36px;
-
-      border-radius: 30px;
+      background: linear-gradient(135deg, #0d9488 0%, #0284c7 100%);
+      color: #ffffff !important;
+      padding: 16px 38px;
+      border-radius: 40px;
       text-decoration: none;
-      font-weight: bold;
-      margin-top: 20px;
-      display: inline-block;
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 22px rgba(13, 148, 136, 0.4);
+      transition: all 0.3s ease;
     }
 
     .resume-button:hover {
-      background: #0ff;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(13, 148, 136, 0.55);
+      color: #ffffff !important;
     }
 
+    /* Scroll Animation - The Original Fade & Slide-in Animation */
     section {
-      padding: 60px 20px;
-      max-width: 1100px;
+      padding: 85px 25px;
+      max-width: 1200px;
       margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    section.visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+    }
+
+    section:not(.visible) {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 45px;
+      position: relative;
     }
 
     section h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      color: #00ffd9;
-      margin-bottom: 40px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.75rem;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
     }
 
-    .card,
-    .card-grid .card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 10px 12px;
-      border-radius: 14px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-      margin-bottom: 20px;
-      transition: transform 0.3s;
+    section h2::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-teal), #c27803);
+      margin: 12px auto 0 auto;
+      border-radius: 4px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    /* Cards - Small shifting animation */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      padding: 24px;
+      border-radius: 18px;
+      border: 1px solid var(--card-border);
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
+      transform: translateY(-6px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--card-border-hover);
     }
 
     .card img {
       width: 100%;
       height: auto;
-      max-height: 300px;
-      /* Fixed height */
-
-      object-fit: Cover;
-
-      border-radius: 10px;
-      margin-bottom: 10px;
-      background: None;
-      padding: 0;
-      /* Optional padding inside the white box */
-      display: block;
-      margin: 0 auto 10px auto;
-
-    }
-
-    .tedis-img {
-      width: auto;
-      height: auto;
-      /* you can adjust this to make it bigger */
+      max-height: 220px;
       object-fit: contain;
-      display: block;
-      margin: 0 auto 10px auto;
-      background-color: #fff;
-      /* optional for logos */
-      padding: 8px;
-      border-radius: 10px;
-    }
-
-    /* Make all Experience section images equal size */
-    #Experience .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: contain;
-      background-color: #fff;
-      padding: 10px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    #publications .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 5px;
-    }
-
-    #publications .card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 8px 10px;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s;
-      margin-bottom: 5px;
-      width: 100%;
-    }
-
-    #publications .card img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      background: transparent;
-    }
-
-    #conferences .card img {
-      height: auto !important;
-      max-height: 200px !important;
-      object-fit: contain !important;
-      background-color: #fff;
-    }
-
-    #hackathons .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    #hackathons .card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 10px 12px;
-      border-radius: 14px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-      transition: transform 0.3s;
-      margin-bottom: 25px;
-      max-width: 300px;
-      /* Set max width for uniformity */
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    #hackathons .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: contain;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      background-color: rgba(255, 255, 255, 0.05);
+      margin-bottom: 16px;
+      transition: transform 0.35s ease;
+      background: #faf7f2;
       padding: 10px;
+      border: 1px solid rgba(214, 201, 186, 0.4);
+    }
+
+    .card:hover img {
+      transform: scale(1.02);
     }
 
     .card strong {
       display: block;
-      margin-bottom: 10px;
-      font-weight: 600;
-      color: #00ffd9;
-      font-size: 1.1rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 1.15rem;
+      line-height: 1.35;
     }
 
     .card p {
-      margin: 10px 0;
-      line-height: 1.6;
-      color: #e0e0e0;
+      margin: 8px 0 16px 0;
+      line-height: 1.68;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      flex-grow: 1;
     }
 
-    .card a {
-      display: inline-block;
-      margin-top: 6px;
-      color: #00ffd9;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .card a:hover {
-      text-decoration: underline;
-      color: #00c6ff;
-    }
-
-    /* Button Links for Cards */
+    /* Buttons */
     .btn-link {
-      display: block;
-      background: linear-gradient(135deg, #00ffd9, #00c6ff);
-      color: #000 !important;
-      padding: 12px 24px;
-      border-radius: 25px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #0d9488 0%, #0284c7 100%);
+      color: #ffffff !important;
+      padding: 11px 22px;
+      border-radius: 30px;
       text-decoration: none;
-      font-weight: 700;
-      margin-top: 12px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 255, 217, 0.3);
-      text-align: center;
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-top: auto;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.28);
       width: fit-content;
     }
 
     .btn-link:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 255, 217, 0.5);
+      box-shadow: 0 8px 20px rgba(13, 148, 136, 0.42);
+      color: #ffffff !important;
       text-decoration: none;
-      color: #000 !important;
     }
 
-    .btn-link i {
-      margin-right: 8px;
+    /* About Me Section */
+    .about-card {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 46px 50px;
+      border: 1px solid var(--card-border);
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .about-lead {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      line-height: 1.55;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .about-lead span {
+      color: var(--accent-teal-dark);
+    }
+
+    .about-body p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+    }
+
+    .about-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-body strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* Social Links */
+    .social-links-card {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 26px;
+      border-radius: 35px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 15px rgba(66, 48, 30, 0.08);
+      border: 1px solid transparent;
+      background: #ffffff;
+    }
+
+    .social-btn i {
+      font-size: 1.15rem;
+    }
+
+    .email-btn {
+      color: #d93025;
+      border-color: rgba(217, 48, 37, 0.25);
+    }
+
+    .email-btn:hover {
+      background: #d93025;
+      color: #ffffff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(217, 48, 37, 0.35);
+    }
+
+    .github-btn {
+      color: #24292e;
+      border-color: rgba(36, 41, 46, 0.25);
+    }
+
+    .github-btn:hover {
+      background: #24292e;
+      color: #ffffff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(36, 41, 46, 0.35);
+    }
+
+    .orcid-btn {
+      color: #a6ce39;
+      border-color: rgba(166, 206, 57, 0.4);
+    }
+
+    .orcid-btn:hover {
+      background: #a6ce39;
+      color: #ffffff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(166, 206, 57, 0.4);
+    }
+
+    .linkedin-btn {
+      color: #0a66c2;
+      border-color: rgba(10, 102, 194, 0.25);
+    }
+
+    .linkedin-btn:hover {
+      background: #0a66c2;
+      color: #ffffff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(10, 102, 194, 0.35);
+    }
+
+    /* Experience Images */
+    #Experience .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      background-color: #ffffff;
+      padding: 14px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(214, 201, 186, 0.5);
+    }
+
+    .mf-dark-bg {
+      background-color: #0b0c10 !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    }
+
+    .tedis-img {
+      object-fit: contain;
+      background-color: #ffffff !important;
+      padding: 10px;
+      border-radius: 12px;
+    }
+
+    /* Publications Section Styling */
+    #publications .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    #publications .card {
+      background: #ffffff;
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid var(--card-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .pub-cover-wrap {
+      width: 100%;
+      height: 310px;
+      background: #faf6f0;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      overflow: hidden;
+      padding: 12px;
+      border: 1px solid rgba(214, 201, 186, 0.5);
+    }
+
+    .pub-cover-wrap img {
+      width: auto;
+      max-width: 100%;
+      height: 100%;
+      max-height: 285px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(66, 48, 30, 0.1);
+      transition: transform 0.3s ease;
+      background: transparent;
+      padding: 0;
+      border: none;
+      margin: 0;
+    }
+
+    #publications .card:hover .pub-cover-wrap img {
+      transform: translateY(-4px) scale(1.02);
+    }
+
+    .pub-badge {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--accent-teal-dark);
+      background: rgba(13, 148, 136, 0.1);
+      padding: 4px 12px;
+      border-radius: 16px;
+      margin-bottom: 10px;
+      width: fit-content;
+      border: 1px solid rgba(13, 148, 136, 0.2);
+    }
+
+    #publications .card strong {
+      font-size: 1.06rem;
+      line-height: 1.4;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    #publications .card p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.55;
+    }
+
+    /* Conferences Section */
+    .conf-category-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      color: var(--text-primary);
+      margin: 40px 0 25px 0;
+      position: relative;
+    }
+
+    .conf-category-title span {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 8px;
+    }
+
+    .conf-category-title span::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 20%;
+      right: 20%;
+      height: 2px;
+      background: var(--accent-teal);
+    }
+
+    #conferences .card img {
+      height: 170px !important;
+      max-height: 170px !important;
+      object-fit: contain !important;
+      background-color: #ffffff;
+      padding: 12px;
+      border-radius: 12px;
     }
 
     /* Projects Section */
@@ -353,8 +649,9 @@
       width: 100%;
       height: 200px;
       object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 15px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      background-color: #f7f3ed;
     }
 
     #projects .card-content {
@@ -363,201 +660,178 @@
       flex-direction: column;
     }
 
-    #projects .card p {
-      flex: 1;
-      margin: 10px 0;
-      line-height: 1.6;
-    }
-
-    #newsletter .card {
+    /* Newsletter Card */
+    .newsletter-card {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 42px 30px;
       text-align: center;
+      max-width: 650px;
+      margin: 0 auto;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .newsletter-button {
-      background-color: #000011;
-      color: #00ffd9;
-      padding: 12px 25px;
-      border-radius: 30px;
-      display: inline-block;
-      font-weight: 600;
+    .newsletter-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--card-shadow-hover);
     }
 
-    /* Social Links Buttons */
-    .social-links-card {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 20px;
-      padding: 20px;
-    }
-
-    .social-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .social-btn i {
-      font-size: 1.2rem;
-    }
-
-    .email-btn {
-      background: linear-gradient(135deg, #ea4335, #d32f2f);
-      color: #fff;
-    }
-
-    .email-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(234, 67, 53, 0.4);
-    }
-
-    .github-btn {
-      background: linear-gradient(135deg, #333, #24292e);
-      color: #fff;
-    }
-
-    .github-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(36, 41, 46, 0.4);
-    }
-
-    .linkedin-btn {
-      background: linear-gradient(135deg, #0077b5, #005582);
-      color: #fff;
-    }
-
-    .linkedin-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0, 119, 181, 0.4);
+    .newsletter-card p {
+      font-size: 1.12rem;
+      color: var(--text-secondary);
+      margin-bottom: 22px;
+      line-height: 1.6;
     }
 
     /* Contact Portal Card */
     .contact-portal-card {
-      background: linear-gradient(135deg, rgba(0, 198, 255, 0.1), rgba(0, 255, 217, 0.05));
-      border: 2px solid rgba(0, 255, 217, 0.2);
-      border-radius: 20px;
-      padding: 50px 40px;
-      max-width: 600px;
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 55px 40px;
+      max-width: 680px;
       margin: 0 auto;
-      box-shadow: 0 8px 32px rgba(0, 255, 217, 0.15);
-      backdrop-filter: blur(10px);
+      box-shadow: var(--card-shadow);
       text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-portal-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--card-shadow-hover);
     }
 
     .contact-header {
-      margin-bottom: 35px;
+      margin-bottom: 30px;
     }
 
     .contact-header i {
-      font-size: 4rem;
-      color: #00ffd9;
-      margin-bottom: 20px;
-      display: block;
+      font-size: 3.2rem;
+      color: var(--accent-teal);
+      margin-bottom: 16px;
+      display: inline-block;
+      background: rgba(13, 148, 136, 0.1);
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      border-radius: 50%;
     }
 
     .contact-header h3 {
-      font-size: 2rem;
-      color: #00ffd9;
-      margin-bottom: 15px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      font-weight: 700;
     }
 
     .contact-header p {
-      color: #b0b0b0;
-      font-size: 1.1rem;
-      line-height: 1.6;
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.65;
+      max-width: 520px;
+      margin: 0 auto;
     }
 
     .contact-portal-btn {
       display: inline-flex;
       align-items: center;
-      gap: 15px;
-      background: linear-gradient(135deg, #00ffd9, #00c6ff);
-      color: #000;
-      padding: 18px 40px;
+      gap: 12px;
+      background: linear-gradient(135deg, #0d9488 0%, #0284c7 100%);
+      color: #ffffff !important;
+      padding: 16px 38px;
       border-radius: 50px;
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 700;
       transition: all 0.3s ease;
-      box-shadow: 0 8px 25px rgba(0, 255, 217, 0.3);
+      box-shadow: 0 8px 24px rgba(13, 148, 136, 0.32);
     }
 
     .contact-portal-btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 35px rgba(0, 255, 217, 0.5);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(13, 148, 136, 0.48);
+      color: #ffffff !important;
     }
 
-    .contact-portal-btn i {
-      font-size: 1.3rem;
+    .contact-portal-btn i:last-child {
+      transition: transform 0.25s ease;
     }
 
-    footer {
-      background: #0b0c10;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-      color: #aaa;
+    .contact-portal-btn:hover i:last-child {
+      transform: translateX(4px);
     }
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    .bottom-spacer {
+      height: 60px;
     }
 
-    section:not(.visible) {
-      opacity: 0;
-      transform: translateY(40px);
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-content h1 {
+        font-size: 3.2rem;
+      }
+      .hero {
+        padding: 40px 30px;
+      }
     }
 
     @media (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: flex-start;
+        padding: 16px 20px;
       }
 
       nav {
         display: flex;
         flex-wrap: wrap;
-        gap: 15px;
-        margin-top: 10px;
+        gap: 8px;
+        margin-top: 12px;
+        width: 100%;
+      }
+
+      nav a {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+      }
+
+      .hero {
+        padding: 30px 20px;
       }
 
       .hero-content h1 {
-        font-size: 2.2rem;
+        font-size: 2.3rem;
       }
 
       .hero-content p {
-        font-size: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .about-card {
+        padding: 30px 22px;
+      }
+
+      .about-lead {
+        font-size: 1.25rem;
       }
 
       .card-grid {
         grid-template-columns: 1fr;
       }
 
-      .tedis-img {
-        height: 100px;
-        width: auto;
-        object-fit: contain;
-        display: block;
-        margin: 0 auto 10px auto;
-        background-color: transparent;
+      #publications .card-grid {
+        grid-template-columns: 1fr;
       }
 
       .contact-portal-card {
-        padding: 35px 25px;
+        padding: 38px 20px;
       }
 
       .contact-header h3 {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
       }
 
       .contact-portal-btn {
@@ -575,21 +849,14 @@
       }
     }
   </style>
-  <script>
-    window.addEventListener('scroll', () => {
-      document.querySelectorAll('section').forEach(section => {
-        const top = section.getBoundingClientRect().top;
-        const threshold = window.innerHeight * 0.85;
-        if (top < threshold) {
-          section.classList.add('visible');
-        }
-      });
-    });
-
-  </script>
 </head>
 
 <body>
+  <!-- Ambient Floating Orbs for depth -->
+  <div class="ambient-orb ambient-orb-1"></div>
+  <div class="ambient-orb ambient-orb-2"></div>
+
+  <!-- Dark Top Bar (No dot on name) -->
   <header>
     <h1>Monishwar Reddy</h1>
     <nav>
@@ -604,113 +871,160 @@
     </nav>
   </header>
 
-  <section class="hero">
+  <!-- Hero Section (Always visible div - never hidden) -->
+  <div class="hero">
     <div class="slideshow-container">
       <img class="slide fit-full" src="monishwar-1.jpeg" alt="Slide 1" />
       <img class="slide" src="monishwar-2.png" alt="Slide 2" />
       <img class="slide" src="monishwar-4.jpeg" alt="Slide 4" />
       <img class="slide" src="monishwar-5.jpeg" alt="Slide 5" />
     </div>
+    
     <div class="hero-content">
       <h1>Monishwar Reddy Vardireddy</h1>
-      <p>Student, Woxsen University</p>
-      <a href="re.pdf" class="resume-button" download>About Me</a>
+      <!-- Resume button updated to r.pdf -->
+      <a href="r.pdf" class="resume-button" download="V_Monishwar_Reddy_Resume.pdf">
+        <i class="fas fa-file-download"></i> Download Resume
+      </a>
     </div>
 
-  </section>
+  </div>
 
+  <!-- About Me Section -->
   <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-      Hi, I’m Monishwar Reddy Vardireddy, currently pursuing B.Tech at Woxsen University, specializing in Computer
-      Science. I’m deeply passionate about the intersection of technology, research, and sustainability. Over the years,
-      I’ve explored a wide range of domains such as data analysis, biomedical signal processing and EEG-based research.
-      My work as a Research Assistant and Intern has allowed me to contribute to impactful projects like mathematical
-      modelling, Monte Carlo simulations, and myocardial infarction detection.
-      I've also contributed to global leadership and tech diplomacy through initiatives like TEDIS MUNs, which connects
-      students worldwide to explore sustainable solutions through innovation and dialogue. I’m always eager to take on
-      new challenges where I can apply my skills to real-world problems and drive meaningful impact.
+    <div class="section-header">
+      <h2>About Me</h2>
+      <p class="section-subtitle">Bridging computational engineering, biomedical intelligence, and global youth leadership</p>
     </div>
+    <div class="about-card">
+      <div class="about-lead">
+        Hi, I’m <span>Monishwar Reddy Vardireddy</span>, currently pursuing my B.Tech at <strong>Woxsen University</strong>, specializing in Computer Science.
+      </div>
+      <div class="about-body">
+        <p>
+          I am deeply passionate about working at the nexus of technology, computational research, and sustainability. Over the years, I have actively investigated a diverse spectrum of frontiers including mathematical modeling, biomedical signal processing, and EEG-based human-machine interfaces.
+        </p>
+        <p>
+          My experience as a Research Assistant and Intern has allowed me to contribute to high-impact research projects covering SEIR epidemiology, Monte Carlo simulations, AI, Machine Learning, Deep Learning, Brain-Computer Interfaces (BCI), and myocardial infarction detection algorithms.
+        </p>
+        <p>
+          I am also honored to be selected as a <strong>Millennium Fellow – Class of 2026</strong>, a prestigious global leadership program conducted by the <strong>United Nations Academic Impact (UNAI)</strong> and the <strong>Millennium Campus Network (MCN)</strong>, advancing SDG 4: Quality Education through student-led initiatives.
+        </p>
+        <p>
+          I am proficient in Python, data structures, algorithms, and statistical modeling, with a focus on designing scalable and efficient computational solutions. I am passionate about developing robust software systems and applying machine learning to solve real-world problems, with a strong foundation in software engineering, machine learning, and data-driven systems.
+        </p>
+      </div>
+    </div>
+
+    <!-- Social / Academic Links including ORCID beside GitHub -->
     <div class="social-links-card">
       <a href="mailto:monishwar26413@gmail.com" class="social-btn email-btn">
-        <i class="fas fa-envelope"></i> Email
+        <i class="fas fa-envelope"></i> Email Me
       </a>
-      <a href="https://github.com/monishwar-reddy" target="_blank" class="social-btn github-btn">
+      <a href="https://github.com/monishwar-reddy" target="_blank" rel="noopener noreferrer" class="social-btn github-btn">
         <i class="fab fa-github"></i> GitHub
       </a>
-      <a href="https://www.linkedin.com/in/monishwar-reddy-vardireddy-b41991282/" target="_blank"
-        class="social-btn linkedin-btn">
+      <a href="https://orcid.org/0009-0005-1212-4945" target="_blank" rel="noopener noreferrer" class="social-btn orcid-btn">
+        <i class="fab fa-orcid"></i> ORCID
+      </a>
+      <a href="https://www.linkedin.com/in/monishwar-reddy-vardireddy-b41991282/" target="_blank" rel="noopener noreferrer" class="social-btn linkedin-btn">
         <i class="fab fa-linkedin"></i> LinkedIn
       </a>
     </div>
   </section>
 
+  <!-- Experience Section -->
   <section id="Experience">
-    <h2>Experience</h2>
+    <div class="section-header">
+      <h2>Experience</h2>
+      <p class="section-subtitle">Leadership fellowships, academic research appointments, and industrial internships</p>
+    </div>
     <div class="card-grid">
       <div class="card">
-        <img src="MF.png" alt="Millennium Fellowship – Class of 2026" style="background-color: #0b0c10;">
-        <strong>Millennium Fellowship – Class of 2026</strong><br>
-        Working on TEDIS-III (Technology & Diplomacy International Summit III) as part of the Millennium Fellowship – Class of 2026, a global student leadership program conducted by United Nations Academic Impact (UNAI) and Millennium Campus Network (MCN), advancing SDG 4: Quality Education through student-led initiatives.
+        <img src="LA.png" alt="Associate Microsoft Student Ambassador">
+        <strong>Associate Microsoft Student Ambassador</strong>
+        <p>As an Associate Microsoft Student Ambassador, I am part of a global community of student leaders dedicated to empowering fellow students, building technology communities, and promoting learning and innovation.</p>
+      </div>
+      <!-- Millennium Fellowship with dark background for prominent logo -->
+      <div class="card">
+        <img src="MF.png" alt="Millennium Fellowship – Class of 2026" class="mf-dark-bg">
+        <strong>Millennium Fellowship – Class of 2026</strong>
+        <p>Working on TEDIS-III (Technology & Diplomacy International Summit III) as part of the Millennium Fellowship – Class of 2026, a global student leadership program conducted by United Nations Academic Impact (UNAI) and Millennium Campus Network (MCN), advancing SDG 4: Quality Education through student-led initiatives.</p>
       </div>
       <div class="card">
         <img src="intern-1.jpg" alt="PRME">
-        <strong>PRME | Responsible Work & Purposeful Careers</strong><br>
-        Engaged in initiatives promoting responsible work, sustainability, and purpose-driven careers.
+        <strong>PRME | Responsible Work & Purposeful Careers</strong>
+        <p>Actively engaged in initiatives promoting responsible management education, sustainability principles, and purpose-driven career pathways across academic and youth networks.</p>
       </div>
       <div class="card">
-        <img src="mix.png" alt="RA" class="tedis-img">
-        <strong>Research Assistant – Woxsen University</strong><br>
-        SEIR, Monte Carlo model Analysis.
+        <img src="mix.png" alt="Research Assistant" class="tedis-img">
+        <strong>Research Assistant – Woxsen University</strong>
+        <p>Conducted theoretical and computational modeling analyzing epidemic dynamics through SEIR systems and Monte Carlo stochastic simulations around model singularities.</p>
       </div>
       <div class="card">
-        <img src="intern-2.png" alt="Intern" class="fix-bg">
-        <strong>Research Assistant-Woxsen Agentic Lab</strong><br>
-        Blockchain Entanglement Research, Decentralized Systems, Entanglement Protocol Design.
+        <img src="intern-2.png" alt="Woxsen Agentic Lab" class="fix-bg">
+        <strong>Research Assistant – Woxsen Agentic Lab</strong>
+        <p>Researched blockchain entanglement protocols, decentralized multi-agent systems, and secure communication architectures for distributed environments.</p>
       </div>
       <div class="card">
-        <img src="mix.png" alt="Intern" class="fix-bg">
-        <strong>Research Intern – Woxsen University</strong><br>
-        EEG/HMI Research and Publications.
+        <img src="mix.png" alt="Research Intern" class="fix-bg">
+        <strong>Research Intern – Woxsen University</strong>
+        <p>Conducted research on biomedical human-machine interfaces, electroencephalogram (EEG) signal processing, and cognitive data analysis for research publications.</p>
       </div>
       <div class="card">
-        <img src="hcl.png" alt="HCL" class="fix-bg">
-        <strong>Biomedical Signal Processing Intern – HCL Tech</strong><br>
-        Myocardial Infarction Detection .
+        <img src="hcl.png" alt="HCL Tech" class="fix-bg">
+        <strong>Biomedical Signal Processing Intern – HCL Tech</strong>
+        <p>Engineered automated signal processing algorithms and diagnostic pipelines for myocardial infarction detection using electrocardiogram data analysis.</p>
       </div>
       <div class="card">
-        <img src="downloads-4.jpg" alt="TEDIS" class="tedis-img">
+        <img src="downloads-4.jpg" alt="TEDIS Foundation" class="tedis-img">
         <strong>Founder – TEDIS Foundation</strong>
-        <p>Global MUN Conferences on Diplomacy and Technology.</p>
-        <a href="https://www.linkedin.com/company/tedis-foundation/" target="_blank" class="btn-link">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="https://www.instagram.com/tedis_foundation?igsh=MXhwdDZobXM3c2RqcA==" target="_blank" class="btn-link">
-          <i class="fab fa-instagram"></i> Instagram
-        </a>
+        <p>Founded and spearheaded global Model United Nations conferences dedicated to youth diplomacy, sustainable development goals, and technological governance.</p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto;">
+          <a href="https://www.linkedin.com/company/tedis-foundation/" target="_blank" rel="noopener noreferrer" class="btn-link">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://www.instagram.com/tedis_foundation?igsh=MXhwdDZobXM3c2RqcA==" target="_blank" rel="noopener noreferrer" class="btn-link">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+        </div>
       </div>
       <div class="card">
         <img src="tianno.png" alt="Tiaano">
-        <strong>R&D Analyst Intern – Tiaano</strong><br>
-        Innovation & Insights analysis.
+        <strong>R&D Analyst Intern – Tiaano</strong>
+        <p>Delivered technical research, market insight analysis, and technology forecasting to accelerate research and product development initiatives.</p>
       </div>
       <div class="card">
-        <img src="mix.png" alt="DA">
-        <strong>Data Analyst Intern – Woxsen University</strong><br>
-        Social Media Analytics & Visualization.
+        <img src="mix.png" alt="Data Analyst Intern">
+        <strong>Data Analyst Intern – Woxsen University</strong>
+        <p>Executed data analytics, user engagement tracking, and comprehensive data visualization dashboards for institutional digital strategy.</p>
       </div>
     </div>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects">
-    <h2>Projects</h2>
+    <div class="section-header">
+      <h2>Projects</h2>
+      <p class="section-subtitle">Full-stack web applications, AI platforms, and real-time analytical systems</p>
+    </div>
     <div class="card-grid">
+      <div class="card">
+        <img src="project-4.png" alt="IntervAI">
+        <div class="card-content">
+          <strong>IntervAI</strong>
+          <p>IntervAI is an AI-powered interview preparation platform that simulates real-world interviews for different roles and career domains. Users can choose a role or upload a job description to receive tailored questions, practice through voice or speech-based interactions, and get personalized feedback and recommendations to improve their interview performance.</p>
+          <a href="https://intervai-interview-studio.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-link">
+            Visit Site <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
       <div class="card">
         <img src="project -3.png" alt="PharmaBalance">
         <div class="card-content">
           <strong>PharmaBalance</strong>
           <p>PharmaBalance is a cutting-edge web application designed to simulate and visualize the complex process of pharmaceutical drug discovery. It leverages a simulated serverless architecture to demonstrate efficient load balancing, mass balance optimization, and accurate efficacy testing.</p>
-          <a href="https://pharmabalance.netlify.app/pharma-main/index.html" target="_blank" class="btn-link">
+          <a href="https://pharmabalance.netlify.app/pharma-main/index.html" target="_blank" rel="noopener noreferrer" class="btn-link">
             Try It Live <i class="fas fa-external-link-alt"></i>
           </a>
         </div>
@@ -720,7 +1034,7 @@
         <div class="card-content">
           <strong>CampusConnect</strong>
           <p>Campus Connect solves campus disconnect by providing a single unified platform for studying, socializing, gaming, and AI-assisted support by merging education, entertainment, and community into one app.</p>
-          <a href="https://campus-connect-183.firebaseapp.com/" target="_blank" class="btn-link">
+          <a href="https://campus-connect-183.firebaseapp.com/" target="_blank" rel="noopener noreferrer" class="btn-link">
             Visit Site <i class="fas fa-external-link-alt"></i>
           </a>
         </div>
@@ -729,10 +1043,8 @@
         <img src="disaster-response.png" alt="AI Disaster Response Platform">
         <div class="card-content">
           <strong>AI Disaster Response Platform</strong>
-          <p>AI Disaster Response Platform is a smart, serverless web app that visualizes real-time environmental data
-            such as temperature, humidity, and air quality. It uses Flask and Google Cloud Run, with AI-powered logic
-            through Google AI Studio (Gemini API).</p>
-          <a href="https://ai-disaster-system.netlify.app/" target="_blank" class="btn-link">
+          <p>A smart, serverless web app that visualizes real-time environmental data such as temperature, humidity, and air quality using Flask and Google Cloud Run, powered by Google AI Studio (Gemini API).</p>
+          <a href="https://ai-disaster-system.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-link">
             Visit Site <i class="fas fa-external-link-alt"></i>
           </a>
         </div>
@@ -741,11 +1053,8 @@
         <img src="health-vault.png" alt="Cloud Health Record Vault">
         <div class="card-content">
           <strong>Cloud Health Record Vault</strong>
-          <p>Cloud Health Record Vault is a secure, cloud-based platform that enables patients to upload, store, and
-            access their medical records anytime, anywhere. It solves the issue of scattered health data across
-            hospitals, labs, and clinics by offering a unified, provider-agnostic vault with strong privacy and
-            accessibility features.</p>
-          <a href="https://gorgeous-crostata-e51b2a.netlify.app/" target="_blank" class="btn-link">
+          <p>A secure, cloud-based platform that enables patients to upload, store, and access medical records anytime, anywhere, eliminating scattered health data with strong privacy features.</p>
+          <a href="https://gorgeous-crostata-e51b2a.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-link">
             Visit Site <i class="fas fa-external-link-alt"></i>
           </a>
         </div>
@@ -754,8 +1063,8 @@
         <img src="p-5.png" alt="LoanPulse AI">
         <div class="card-content">
           <strong>LoanPulse AI</strong>
-          <p>LoanPulse AI is an intelligent, secure, and privacy-focused loan monitoring dashboard designed to help lenders and analysts assess risk locally. Built with a zero-server architecture, all data processing happens directly in your browser. Sensitive loan agreements and financial data never leave your device.</p>
-          <a href="https://whimsical-croquembouche-0cbbdd.netlify.app/" target="_blank" class="btn-link">
+          <p>An intelligent, privacy-focused loan monitoring dashboard designed to help lenders and analysts assess risk locally with zero-server client processing.</p>
+          <a href="https://whimsical-croquembouche-0cbbdd.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-link">
             Try It Live <i class="fas fa-external-link-alt"></i>
           </a>
         </div>
@@ -763,245 +1072,310 @@
     </div>
   </section>
 
+  <!-- LinkedIn Newsletter Section -->
   <section id="newsletter">
-    <h2>Newsletter</h2>
-    <div class="card">
-      <p>Stay updated with my latest work and thoughts!</p>
-      <a href="https://www.linkedin.com/newsletters/7280177177575223296/" target="_blank" class="btn-link">
+    <div class="section-header">
+      <h2>LinkedIn Newsletter</h2>
+      <p class="section-subtitle">Stay updated with my latest thoughts, publications, and deep dives on AI, engineering, and tech policy</p>
+    </div>
+    <div class="newsletter-card">
+      <p>Follow along for periodic insights at the intersection of computational engineering, biomedical AI, and technology diplomacy.</p>
+      <a href="https://www.linkedin.com/newsletters/7280177177575223296/" target="_blank" rel="noopener noreferrer" class="btn-link">
         <i class="fab fa-linkedin"></i> Follow My LinkedIn Newsletter
       </a>
     </div>
   </section>
+
+  <!-- Hackathons Section -->
   <section id="hackathons">
-    <h2>Hackathons</h2>
+    <div class="section-header">
+      <h2>Hackathons</h2>
+      <p class="section-subtitle">Competitions, awards, and rapid prototyping under high pressure</p>
+    </div>
     <div class="card-grid">
       <div class="card">
         <img src="Agentathon-hackathon.png" alt="AGENTATHON 2025">
         <strong>AGENTATHON 2025</strong>
-        <p>We built Campus Connect, a platform designed to help students connect and interact seamlessly</p>
-        <a href="Agentathon-Certificate.png" target="_blank" class="btn-link">
+        <p>Built Campus Connect, a platform designed to help students connect and interact seamlessly.</p>
+        <a href="Agentathon-Certificate.png" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
       <div class="card">
         <img src="hack-1.png" alt="Forge Alumnus × Microsoft Code-a-thon">
         <strong>Forge Alumnus × Microsoft Code-a-thon</strong>
-        <p>My project was Interview Simulator a react-based web application that simulates behavioural interviews using an AI agent. It provides real-time feedback on your answers based on the STAR method, clarity, and completeness which research top 4.</p>
-        <a href="h-1.png" target="_blank" class="btn-link">
+        <p>Built Interview Simulator, a React-based web application providing real-time feedback using the STAR method, reaching top 4.</p>
+        <a href="h-1.png" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
       <div class="card">
-        <img src="hackback.jpeg" alt="Hackathon 1">
+        <img src="hackback.jpeg" alt="Udhgam 2025 DigiTech Hackathon">
         <strong>Udhgam 2025 DigiTech Hackathon – 3rd Prize</strong>
-        <p>We built a Ticketing Platform to Help Small Event Organizers With Sales, Payments, and Check-Ins.</p>
-        <a href="Hack-1.jpeg" target="_blank" class="btn-link">
+        <p>Built a Ticketing Platform to help small event organizers with sales, payments, and seamless check-ins.</p>
+        <a href="Hack-1.jpeg" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
       <div class="card">
         <img src="kiro-hackathon.png" alt="Code with Kiro Hackathon">
         <strong>Code with Kiro Hackathon</strong>
-        <p>My project was "AI Tutor" an educational web application that demonstrates the power of AI-assisted learning.
-        </p>
-        <a href="https://devpost.com/software/ai-tutor-ai-learning-companion" target="_blank" class="btn-link">
+        <p>Built "AI Tutor", an educational web application demonstrating personalized AI-assisted learning.</p>
+        <a href="https://devpost.com/software/ai-tutor-ai-learning-companion" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-external-link-alt"></i> View Project
         </a>
       </div>
       <div class="card">
         <img src="hack-2.png" alt="IMPETUS Hackathon 2026">
         <strong>IMPETUS Hackathon 2026</strong>
-        <p>Got selected among the top-13 finalists</p>
-        <a href="h-2.jpg" target="_blank" class="btn-link">
+        <p>Selected among the top-13 finalists across competitive engineering cohorts.</p>
+        <a href="h-2.jpg" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
       <div class="card">
         <img src="hack-3.png" alt="Techsprint Hackathon 2025-26">
         <strong>Techsprint Hackathon 2025-26</strong>
-        <p>Got selected among the top-20 finalists</p>
-        <a href="h-3.pdf" target="_blank" class="btn-link">
+        <p>Selected among the top-20 finalists nationwide.</p>
+        <a href="h-3.pdf" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
       <div class="card">
         <img src="hack-4.png" alt="Convolve 4.0">
         <strong>Convolve 4.0</strong>
-        <p>Cleared round -1 and participated in a pan-IIT AI/ML Hackathon organized jointly by IIT Guwahati, IIT Madras, IIT Kanpur, IIT Bombay, IIT Delhi, IIT Roorkee, IIT Kharagpur, IIT Varanasi (BHU), and IIT Hyderabad, from January 2026 to February 2026.</p>
-        <a href="h-4.png" target="_blank" class="btn-link">
+        <p>Cleared round-1 and participated in the pan-IIT AI/ML Hackathon organized jointly by 9 IITs (Jan 2026 – Feb 2026).</p>
+        <a href="h-4.png" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
       <div class="card">
         <img src="hack-5.png" alt="India AI Impact Buildathon">
         <strong>India AI Impact Buildathon</strong>
-        <p>Participated in the India AI Impact Buildathon, a nationwide AI innovation challenge conducted at the India AI Impact Summit 2026.</p>
-        <a href="h-5.png" target="_blank" class="btn-link">
+        <p>Participated in the nationwide AI innovation challenge conducted at the India AI Impact Summit 2026.</p>
+        <a href="h-5.png" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
     </div>
   </section>
+
+  <!-- Publications Section (4 Cards) -->
   <section id="publications">
-    <h2>Publications</h2>
+    <div class="section-header">
+      <h2>Publications</h2>
+      <p class="section-subtitle">Peer-reviewed chapters, journal articles, and scholarly research contributions</p>
+    </div>
     <div class="card-grid">
+      <!-- Card 1: pub 1.png with period at end -->
       <div class="card">
-        <img src="pub 3.jpg" alt="Exploring Music Effects on Human Emotion Emerging Through EEG: A Systematic Literature Review">
+        <div class="pub-cover-wrap">
+          <img src="pub 1.png" alt="Ramanujan Equation: An Approach Through Symmetry">
+        </div>
+        <span class="pub-badge">Springer Nature &bull; 2027</span>
+        <strong>Ramanujan Equation: An Approach Through Symmetry</strong>
+        <p>Studies in Smart Technologies, Springer Nature,2027.</p>
+        <a href="https://link.springer.com/chapter/10.1007/978-981-95-4526-1_24" target="_blank" rel="noopener noreferrer" class="btn-link">
+          <i class="fas fa-book-open"></i> View Chapter
+        </a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="pub-cover-wrap">
+          <img src="pub 3.jpg" alt="Exploring Music Effects on Human Emotion Emerging Through EEG: A Systematic Literature Review">
+        </div>
+        <span class="pub-badge">Journal &bull; 2026</span>
         <strong>Exploring Music Effects on Human Emotion Emerging Through EEG: A Systematic Literature Review</strong>
-        <p>Journal of Cortexplore - 2026.</p>
-        <a href="https://cortexplore.org/index.php/jce/article/view/8" target="_blank" class="btn-link">
+        <p>Journal of Cortexplore, Cortexplore, 2026.</p>
+        <a href="https://cortexplore.org/index.php/jce/article/view/8" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-file-alt"></i> View Paper
         </a>
       </div>
+
+      <!-- Card 3 -->
       <div class="card">
-        <img src="plastic-paper.png" alt="Plastic Waste Pyrolysis">
+        <div class="pub-cover-wrap">
+          <img src="plastic-paper.png" alt="Plastic Waste Pyrolysis">
+        </div>
+        <span class="pub-badge">STM Journals &bull; 2025</span>
         <strong>Various Methods for Plastic Waste Pyrolysis to Fuels: A Review</strong>
-        <p>Journal of Polymer and Composites - 2025.</p>
-        <a href="https://journals.stmjournals.com/jopc/article=2025/view=215242/" target="_blank" class="btn-link">
+        <p>Journal of Polymer and Composites, STM Journals, 2025.</p>
+        <a href="https://journals.stmjournals.com/jopc/article=2025/view=215242/" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-file-alt"></i> View Paper
         </a>
       </div>
+
+      <!-- Card 4 -->
       <div class="card">
-        <img src="eeg-neuromarketing.png" alt="EEG in Neuromarketing">
+        <div class="pub-cover-wrap">
+          <img src="eeg-neuromarketing.png" alt="EEG in Neuromarketing">
+        </div>
+        <span class="pub-badge">IGI Global &bull; 2025</span>
         <strong>Integrating EEG Analysis to Illuminate Consumer Behavior and Optimize Marketing Strategies</strong>
-        <p>IGI Global – Quantum AI Neuromarketing.</p>
-        <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521"
-          target="_blank" class="btn-link">
+        <p>The Quantum AI Era of Neuromarketing, IGI Global Scientific Publishing, 2025.</p>
+        <a href="http://www.igi-global.com/chapter/integrating-eeg-analysis-to-illuminate-consumer-behavior-and-optimize-marketing-strategies/365521" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-book"></i> View Chapter
         </a>
       </div>
     </div>
   </section>
 
+  <!-- Conferences Section -->
   <section id="conferences">
-    <h2>Conferences</h2>
-    <h3 style="text-align:center; color:#00ffd9; margin-top:30px;">Research Conferences</h3>
+    <div class="section-header">
+      <h2>Conferences</h2>
+      <p class="section-subtitle">Presentations at international mathematical, scientific, and diplomatic forums</p>
+    </div>
+
+    <h3 class="conf-category-title"><span>Research Conferences</span></h3>
     <div class="card-grid">
       <div class="card">
-        <img src="con-1.png" alt="Analytical and Numerical Methods in Differential Equations">
+        <img src="con-1.png" alt="Yanenko 105 Conference">
         <strong>Analytical and Numerical Methods in Differential Equations (Yanenko 105)</strong>
-        <p>Presented my research work titled “Analysis of Epidemic Models through Singularities”</p>
-        <a href="conf-1.pdf" target="_blank" class="btn-link">
+        <p>Presented research work titled “Analysis of Epidemic Models through Singularities”.</p>
+        <a href="conf-1.pdf" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
       <div class="card">
-        <img src="unc-greensboro.png" alt="UNC Greensboro PDE Conference">
+        <img src="unc-greensboro.png" alt="UNC Greensboro Virtual PDE Conference">
         <strong>2025 UNC Greensboro Virtual PDE Conference</strong>
-        <p>Presented my research work on "Analysis of the SEIR Model around the Singularities"</p>
-        <a href="unc-greensboro-cert.png" target="_blank" class="btn-link">
+        <p>Presented research work on "Analysis of the SEIR Model around the Singularities".</p>
+        <a href="unc-greensboro-cert.png" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
       <div class="card">
-        <img src="symmetry2024.png" alt="Symmetry Conference">
+        <img src="symmetry2024.png" alt="Symmetry2024 Conference">
         <strong>Symmetry2024 Conference</strong>
-        <p>Presented Ecological Model Analysis.</p>
-        <a href="Symmetry 2024 certificate.pdf" target="_blank" class="btn-link">
+        <p>Presented Ecological Model Analysis and theoretical formulations.</p>
+        <a href="Symmetry 2024 certificate.pdf" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
       <div class="card">
-        <img src="logo.png" alt="Chemflux Conference">
+        <img src="logo.png" alt="CHEMFLUX 11.0">
         <strong>CHEMFLUX 11.0</strong>
-        <p>Presented at SRM University.</p>
-        <a href="conference-2.jpg" target="_blank" class="btn-link">
+        <p>Presented scientific findings at SRM University.</p>
+        <a href="conference-2.jpg" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
     </div>
 
-    <h3 style="text-align:center; color:#00ffd9; margin-top:30px;">MUN Conferences</h3>
+    <h3 class="conf-category-title"><span>Diplomatic & MUN Conferences</span></h3>
     <div class="card-grid">
       <div class="card">
-        <img src="GRS2025.png" alt="GRS I 2025">
+        <img src="GRS2025.png" alt="Global Refugee Summit 2025">
         <strong>Global Refugee Summit 2025</strong>
-        <p>Represented the Philippines in the UNHCR Committee and received the Best Delegate award.</p>
-        <a href="GRS-2025-Cer.jpeg" target="_blank" class="btn-link">
+        <p>Represented the Philippines in the UNHCR Committee and received the <strong>Best Delegate</strong> award.</p>
+        <a href="GRS-2025-Cer.jpeg" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
       <div class="card">
-        <img src="UNGDS2024.png" alt="UNGDS2024">
+        <img src="UNGDS2024.png" alt="United Nations Global Diplomatic Summit 2024">
         <strong>United Nations Global Diplomatic Summit 2024</strong>
-        <p>Represented Nigeria in the UNICEF Committee and received the Outstanding Delegate award.</p>
-        <a href="UNGDS2024cert.jpeg" target="_blank" class="btn-link">
+        <p>Represented Nigeria in the UNICEF Committee and received the <strong>Outstanding Delegate</strong> award.</p>
+        <a href="UNGDS2024cert.jpeg" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
       <div class="card">
         <img src="HICMUN2024.png" alt="HICMUN2024">
         <strong>HICMUN2024</strong>
-        <p>Represented Gleeson Hedge in the Heroes of Olympus Committee and received an Honorable Mention.</p>
-        <a href="HICMUN2024cert.jpeg" target="_blank" class="btn-link">
+        <p>Represented Gleeson Hedge in the Heroes of Olympus Committee and received an <strong>Honorable Mention</strong>.</p>
+        <a href="HICMUN2024cert.jpeg" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
       <div class="card">
-        <img src="GDS2025.png" alt="GDS2025">
-        <strong>Global Diplomat Summit Model United Nations 2025</strong>
-        <p>Represented Brazil in the ECOFIN Committee and received the High Commendation Award and Best Position Paper
-          Award.</p>
-        <a href="GDS2025cert-1.jpeg" target="_blank" class="btn-link">
-          <i class="fas fa-certificate"></i> Certificate 1
-        </a>
-        <a href="GDS2025cert-2.jpeg" target="_blank" class="btn-link">
-          <i class="fas fa-certificate"></i> Certificate 2
-        </a>
+        <img src="GDS2025.png" alt="Global Diplomat Summit MUN 2025">
+        <strong>Global Diplomat Summit MUN 2025</strong>
+        <p>Represented Brazil in the ECOFIN Committee; received the <strong>High Commendation Award</strong> and <strong>Best Position Paper</strong>.</p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:auto;">
+          <a href="GDS2025cert-1.jpeg" target="_blank" rel="noopener noreferrer" class="btn-link">
+            <i class="fas fa-certificate"></i> Cert 1
+          </a>
+          <a href="GDS2025cert-2.jpeg" target="_blank" rel="noopener noreferrer" class="btn-link">
+            <i class="fas fa-certificate"></i> Cert 2
+          </a>
+        </div>
       </div>
       <div class="card">
-        <img src="DLMUNCSIII.png" alt="DLMUNCSIII">
+        <img src="DLMUNCSIII.png" alt="DLMUN Conference III 2025 (WHO)">
         <strong>DLMUN Conference III 2025</strong>
-        <p>Represented Switzerland in the WHO Committee.</p>
-        <a href="DLMUNCSIIIcert.jpeg" target="_blank" class="btn-link">
+        <p>Represented Switzerland in the World Health Organization (WHO) Committee.</p>
+        <a href="DLMUNCSIIIcert.jpeg" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
       <div class="card">
-        <img src="DMUNfoundation-1.png" alt="DLMUNCSIII">
+        <img src="DMUNfoundation-1.png" alt="DLMUN Conference III 2025 (UNSC)">
         <strong>DLMUN Conference III 2025</strong>
-        <p>Represented the Netherlands in the UNSC Committee.</p>
-        <a href="DMUNCONFERENCECER.jpg" target="_blank" class="btn-link">
+        <p>Represented the Netherlands in the United Nations Security Council (UNSC) Committee.</p>
+        <a href="DMUNCONFERENCECER.jpg" target="_blank" rel="noopener noreferrer" class="btn-link">
           <i class="fas fa-certificate"></i> View Certificate
         </a>
       </div>
     </div>
   </section>
 
+  <!-- Contact Portal Section -->
   <section id="contact">
-    <h2>Get In Touch</h2>
     <div class="contact-portal-card">
       <div class="contact-header">
         <i class="fas fa-paper-plane"></i>
-        <h3>Let's Connect!</h3>
-        <p>Ready to discuss your project or just want to say hi? Click below to send me a message through my contact
-          portal.</p>
+        <h3>Let's Connect & Collaborate</h3>
+        <p>Interested in collaborating on research, engineering initiatives, or discussing technology diplomacy? Send me a message via my dedicated portal.</p>
       </div>
       <a href="contact.html" class="contact-portal-btn">
         <i class="fas fa-envelope-open-text"></i>
-        Open Contact Portal
+        <span>Open Contact Portal</span>
         <i class="fas fa-arrow-right"></i>
       </a>
     </div>
   </section>
 
+  <div class="bottom-spacer"></div>
+
   <script>
+    // Smooth Slideshow Logic
     let slideIndex = 0;
     const slides = document.querySelectorAll(".slide");
 
     function showSlides() {
-      slides.forEach((slide, index) => {
+      slides.forEach((slide) => {
         slide.classList.remove("active");
       });
-
       slides[slideIndex].classList.add("active");
       slideIndex = (slideIndex + 1) % slides.length;
     }
 
-    showSlides(); // Show the first one immediately
-    setInterval(showSlides, 4000); // Change every 4s
-  </script>
+    if (slides.length > 0) {
+      showSlides();
+      setInterval(showSlides, 4500);
+    }
 
+    // Scroll Reveal Animation (Original behavior restored)
+    function checkScrollVisibility() {
+      const sections = document.querySelectorAll('section');
+      const triggerThreshold = window.innerHeight * 0.88;
+
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top < triggerThreshold) {
+          section.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', checkScrollVisibility);
+    window.addEventListener('DOMContentLoaded', checkScrollVisibility);
+    checkScrollVisibility();
+    setTimeout(checkScrollVisibility, 150);
+  </script>
 </body>
 
 </html>
